@@ -1,4 +1,4 @@
 odin recipes... yammmy..
 
 
-https://codepec.github.io/theodinproject/odinrecipes/index.html
+https://codepec.github.io/theodinproject/odin-recipes/index.html
