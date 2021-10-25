@@ -69,7 +69,7 @@ a:hover{
    
     justify-content: center;
     align-items: center;
-  
+    padding: 5%;
 
 }
 
@@ -83,56 +83,25 @@ h1{
 
 
 .container {
-    align-items: center;
-    padding: 10%;
+
     
 }
 
-.agrid {
-    display: grid; 
+.gridBox {
     
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-   
-    gap: 0px;
-    height: 100%;
-    
-    grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
  }
    
  #item-0 {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: 2;
-    grid-column-end: 2;
+
  }
  #item-1 {
-    color:white;
-    margin-left:20px;
-    background-color: gray;
-    grid-row-start: 1;
-    grid-column-start: 2;
-    text-align: center;
-    
-    grid-row-end: 4;
-    grid-column-end: 5;
- 
-  
- 
-   
+
  }
  #item-2 {
-    color:white;
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-row-end: 3;
-    grid-column-end: 2;
+
  }
  #item-3 {
-    color:white;
-    grid-row-start: 3;
-    grid-column-start: 1;
-    grid-row-end: 4;
-    grid-column-end: 2;
+
  }
 
 
@@ -159,16 +128,35 @@ h1{
 
 
 
+.buttonSignIn {
+    all:unset;
+    background-color: #3882F6;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    margin-top:10px;
+    cursor: pointer;
+    
+}
 
 
 
 
 
 
-
-.hero, .firstContent, footer {
+.hero, .firstContent {
     background-color: #1F2937;
+}
 
+footer {
+    background-color: #1F2937;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f9faf8;
 }
 
 .heroMainText {
@@ -212,6 +200,7 @@ h2{                            /*informationHeaderText */
     justify-content: center;
     margin-top: 25px;
     margin-bottom: 25px;
+    padding:5%;
 }
 
 .boxOutline {
@@ -243,6 +232,11 @@ h2{                            /*informationHeaderText */
     font-size: 36px;        /*quoteText*/
     font-weight: light italic;
     color:#1F2937;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+  
+
 }
 
 .quoteRight{
@@ -252,3 +246,16 @@ h2{                            /*informationHeaderText */
     color:#1F2937;
 }
 
+.fourthContent{
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.containerCalltoAction{
+    background-color: #3882F6;
+    color: white;
+    padding: 5%;
+    border-radius: 15px;
+
+}
