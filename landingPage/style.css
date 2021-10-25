@@ -1,7 +1,7 @@
 * {
     margin:0;
     padding:0;
-    
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -66,8 +66,10 @@ a:hover{
 
 .firstContent {
       
-    text-align: center;
+   
     justify-content: center;
+    align-items: center;
+  
 
 }
 
@@ -75,7 +77,88 @@ h1{
     font-weight: extra-bold;
     font-size: 48px;
     color: #f9faf8;
+    
 }
+
+
+
+.container {
+    align-items: center;
+    padding: 10%;
+    
+}
+
+.agrid {
+    display: grid; 
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+   
+    gap: 0px;
+    height: 100%;
+    
+    grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+ }
+   
+ #item-0 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+ }
+ #item-1 {
+    color:white;
+    margin-left:20px;
+    background-color: gray;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    text-align: center;
+    
+    grid-row-end: 4;
+    grid-column-end: 5;
+ 
+  
+ 
+   
+ }
+ #item-2 {
+    color:white;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 2;
+ }
+ #item-3 {
+    color:white;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+ }
+
+
+
+
+
+
+
+
+
+
+.buttonSignUp {
+    all:unset;
+    background-color: #3882F6;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    margin-top:10px;
+    cursor: pointer;
+    
+}
+
+
+
 
 
 
@@ -120,13 +203,15 @@ h2{                            /*informationHeaderText */
     font-size: 36px;
     font-weight: extra-bold;
     color:#1F2937;
+   
 
 }
 
 .secondContent{
     text-align: center;
     justify-content: center;
-    
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .boxOutline {
@@ -159,3 +244,11 @@ h2{                            /*informationHeaderText */
     font-weight: light italic;
     color:#1F2937;
 }
+
+.quoteRight{
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    color:#1F2937;
+}
+
