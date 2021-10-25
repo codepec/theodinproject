@@ -1,9 +1,20 @@
 List of all odin projects 
 https://www.theodinproject.com/paths/foundations/courses/foundations
-
-
-Project: Recipes
+|
+|
+|
+1. Project: Recipes
 https://codepec.github.io/theodinproject/odin-recipes/index.html
-
-Project: Landing Page
+|
+2. Project: Landing Page
 https://codepec.github.io/theodinproject/landingPage/index.html
+|
+3. Project: Rock Paper Scissors
+|
+|
+4. Project: Etch-a-Sketch 
+|
+|
+5. Project: Calculator
+|
+|
