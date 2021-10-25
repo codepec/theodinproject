@@ -1,261 +1,237 @@
 * {
-    margin:0;
-    padding:0;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 
 /* NavBar - Begin */
-header{
-	
-	min-height: 10vh;
-	width: 100%;
-    
-}
-	
-li{
-   
-    list-style: none;
-    text-decoration: none;
-    padding: 10px;
-    display:flex;
-    
-
-
-
+header {
+  min-height: 10vh;
+  width: 100%;
 }
 
-.right{
-    text-decoration: none;
-    font-size: 18px;
-    color:#E5E7EB;
-    font-size: 15px;
-    float: right;
-
+nav {
+  max-width: 800px;
+  margin: auto;
 }
 
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+li {
+  list-style: none;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
 }
 
-a:hover{
-    text-decoration: underline;
+.right {
+  text-decoration: none;
+  font-size: 18px;
+  color: #e5e7eb;
+  font-size: 15px;
+  float: right;
 }
 
-
-
-.left{
-    float: left;
-    font-size: 24px;
-    color: #F9FAF8;
-    
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
-.left a:hover{
-    text-decoration: none;
-    cursor:pointer;
-
+a:hover {
+  text-decoration: underline;
 }
 
+.left {
+  float: left;
+  font-size: 24px;
+  color: #f9faf8;
+}
 
+.left a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* NavBar - End */
 
-
-
 .firstContent {
-      
-   
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
 }
 
-h1{
-    font-weight: extra-bold;
-    font-size: 48px;
-    color: #f9faf8;
-    
+.firstContent h1 {
+  font-weight: extra-bold;
+  font-size: 48px;
+  color: #f9faf8;
+}
+
+.firstContent p {
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+
+  max-width: 700px;
+  margin: auto;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item2-gray {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  background-color: gray;
+  text-align: center;
 }
 
 
 
-.container {
-
-    
-}
-
-.gridBox {
-    
- }
-   
- #item-0 {
-
- }
- #item-1 {
-
- }
- #item-2 {
-
- }
- #item-3 {
-
- }
-
-
-
-
-
-
-
-
+.item2 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    text-align: center;
+  }
 
 
 .buttonSignUp {
-    all:unset;
-    background-color: #3882F6;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    width: 100px;
-    height: 30px;
-    margin-top:10px;
-    cursor: pointer;
-    
+  all: unset;
+  background-color: #3882f6;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
 }
-
-
 
 .buttonSignIn {
-    all:unset;
-    background-color: #3882F6;
-    border: 2px solid white;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    width: 100px;
-    height: 30px;
-    margin-top:10px;
-    cursor: pointer;
-    
+  all: unset;
+  background-color: #3882f6;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-
-
-
-
-
-.hero, .firstContent {
-    background-color: #1F2937;
+.hero,
+.firstContent {
+  background-color: #1f2937;
 }
 
 footer {
-    background-color: #1F2937;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #f9faf8;
+  background-color: #1f2937;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f9faf8;
+  padding: 15px;
 }
 
 .heroMainText {
-  
-    font-weight: extra-bold;
-    font-size: 48px;
-    color: #f9faf8;
+  font-weight: extra-bold;
+  font-size: 48px;
+  color: #f9faf8;
 }
 
-.heroSecondaryText, .headerLinkText {
-    font-size: 18px;
-    color:#E5E7EB;
-
+.heroSecondaryText,
+.headerLinkText {
+  font-size: 18px;
+  color: #e5e7eb;
 }
 
 .headerLogoText {
-    font-size: 24px;
-    color: #F9FAF8;
+  font-size: 24px;
+  color: #f9faf8;
 }
 
 .buttonColor {
-    background-color: #3882F6;
-    color: white;
+  background-color: #3882f6;
+  color: white;
 }
 
 .callToActionBackground {
-    background-color: #3882F6;
-    color: white;
+  background-color: #3882f6;
+  color: white;
 }
 
-h2{                            /*informationHeaderText */
-    font-size: 36px;
-    font-weight: extra-bold;
-    color:#1F2937;
-   
-
+h2 {
+  /*informationHeaderText */
+  font-size: 36px;
+  font-weight: extra-bold;
+  color: #1f2937;
 }
 
-.secondContent{
-    text-align: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding:5%;
+.secondContent {
+  text-align: center;
+  justify-content: center;
+  padding: 5%;
+  max-width: 700px;
+  margin: auto;
 }
 
 .boxOutline {
-    margin: 10px;  
-    text-align: center;
-    justify-content: center;
+  margin: 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 .boxContainerFlex {
-    display:flex;    
-    text-align: center;
-    justify-content: center;
-  
-
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
-
-
-.box{
-    border-radius: 15px;
-    border:3px solid #3882F6;
-    padding: 50px;
-
-   
+.box {
+  border-radius: 15px;
+  border: 3px solid #3882f6;
+  padding: 50px;
 }
 
-.thirdContent{
-    background-color: #E5E7EB; /*quoteSectionBackgroundColor*/
-    font-size: 36px;        /*quoteText*/
-    font-weight: light italic;
-    color:#1F2937;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-  
-
+.thirdContent {
+  background-color: #e5e7eb; /*quoteSectionBackgroundColor*/
+  font-size: 36px; /*quoteText*/
+  font-weight: light italic;
+  color: #1f2937;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
 }
 
-.quoteRight{
-    float: right;
-    font-size: 36px;
-    font-weight: bold;
-    color:#1F2937;
+.containerQuote,
+.container {
+  max-width: 700px;
+  margin: auto;
 }
 
-.fourthContent{
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
+.quoteRight {
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f2937;
 }
 
-.containerCalltoAction{
-    background-color: #3882F6;
-    color: white;
-    padding: 5%;
-    border-radius: 15px;
+.fourthContent {
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
 
+.containerCalltoAction {
+  background-color: #3882f6;
+  color: white;
+  padding: 5%;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: auto;
 }
