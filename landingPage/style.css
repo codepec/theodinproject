@@ -1,0 +1,161 @@
+* {
+    margin:0;
+    padding:0;
+    
+}
+
+
+/* NavBar - Begin */
+header{
+	
+	min-height: 10vh;
+	width: 100%;
+    
+}
+	
+li{
+   
+    list-style: none;
+    text-decoration: none;
+    padding: 10px;
+    display:flex;
+    
+
+
+
+}
+
+.right{
+    text-decoration: none;
+    font-size: 18px;
+    color:#E5E7EB;
+    font-size: 15px;
+    float: right;
+
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+
+.left{
+    float: left;
+    font-size: 24px;
+    color: #F9FAF8;
+    
+}
+
+.left a:hover{
+    text-decoration: none;
+    cursor:pointer;
+
+}
+
+
+
+/* NavBar - End */
+
+
+
+.firstContent {
+      
+    text-align: center;
+    justify-content: center;
+
+}
+
+h1{
+    font-weight: extra-bold;
+    font-size: 48px;
+    color: #f9faf8;
+}
+
+
+
+
+
+
+
+.hero, .firstContent, footer {
+    background-color: #1F2937;
+
+}
+
+.heroMainText {
+  
+    font-weight: extra-bold;
+    font-size: 48px;
+    color: #f9faf8;
+}
+
+.heroSecondaryText, .headerLinkText {
+    font-size: 18px;
+    color:#E5E7EB;
+
+}
+
+.headerLogoText {
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+.buttonColor {
+    background-color: #3882F6;
+    color: white;
+}
+
+.callToActionBackground {
+    background-color: #3882F6;
+    color: white;
+}
+
+h2{                            /*informationHeaderText */
+    font-size: 36px;
+    font-weight: extra-bold;
+    color:#1F2937;
+
+}
+
+.secondContent{
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.boxOutline {
+    margin: 10px;  
+    text-align: center;
+    justify-content: center;
+}
+
+.boxContainerFlex {
+    display:flex;    
+    text-align: center;
+    justify-content: center;
+  
+
+}
+
+
+
+.box{
+    border-radius: 15px;
+    border:3px solid #3882F6;
+    padding: 50px;
+
+   
+}
+
+.thirdContent{
+    background-color: #E5E7EB; /*quoteSectionBackgroundColor*/
+    font-size: 36px;        /*quoteText*/
+    font-weight: light italic;
+    color:#1F2937;
+}
