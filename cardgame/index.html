@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>cardGame</title>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
- 
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 
-    <meta name="description" content="">
+    <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <script type="text/javascript" src="script.js" defer></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
-    <body>
+  <body>
+    <button class="newGame">New Game</button>
+    <h1>Card Game Horror</h1>
 
-<h1>Card Game Horror</h1>
+    <div class="container">
+      <div class="cardBox CPU" id="cardCPU"></div>
+    </div>
 
-<div class="container">
-  <div class="cardBox CPU">
-  </div>
-</div>
+    <div class="line"></div>
 
-<div class="line"></div>
+    <div class="container">
+      <div class="cardBox card1" id="card1">
+        <p>Life: 1hp</p>
+        <img src="mouse.jpg" width="60px" />
+        <p>Attack: 3</p>
+      </div>
+      <div class="cardBox card2">
+        <p>Life: 6hp</p>
+        <img src="tiger.jpg" alt="tiger" width="60px" />
+        <p>Attack: 5</p>
+      </div>
 
-<p>Box</p>
-<p>hide</p>
+      <div class="cardBox card3">
+        <p>Life: 4hp</p>
+        <img src="snake.jpg" alt="snake" width="60px" />
+        <p>Attack: 2</p>
+      </div>
 
-<p>-------</p>
-<p>Player CardBox</p>
-<p>Random I Random II, III, IV, V</p>
-<div class="container">
+      <div class="cardBox card4">
+        <p>Life: 2hp</p>
+        <img src="eagle.jpg" alt="eagle" width="60px" />
+        <p>Attack: 3</p>
+      </div>
 
+      <div class="cardBox card5">
+        <p>Empty</p>
+      </div>
+    </div>
 
-<div class="cardBox Player1">
-  <p>Life: 1hp</p>
-  <img src="mouse.jpg" width="60px">
-  <p>Attack: 3hp</p>
+    <div class="container">
+      <div class="monitor"></div>
+    </div>
 
-</div>
-<div class="cardBox Player2">
-
-<p>Life: 1hp</p>
-<img src="mouse.jpg" width="60px">
-<p>Attack: 3hp</p>
-
-</div>
-
-<div class="cardBox Player3">
-
-<p>Life: 1hp</p>
-<img src="mouse.jpg" width="60px">
-<p>Attack: 3hp</p>
-
-</div>
-
-<div class="cardBox Player4">
-
-<p>Life: 1hp</p>
-<img src="mouse.jpg" width="60px">
-<p>Attack: 3hp</p>
-
-</div>
-
-<div class="cardBox Player5">
-  <p> Empty</p>
-</div>
-
-
-</div>
-
-    </body>
-
+    <footer>
+      created with <i class="fa fa-heart" aria-hidden="true"></i> by CodePec
+    </footer>
+  </body>
 </html>
