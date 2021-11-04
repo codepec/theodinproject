@@ -32,8 +32,12 @@ body {
     margin:2px;
     cursor:pointer;
     box-shadow: inset 0px 0px 5px 5px black;
+    
 
 }
+
+
+
 
 .cardBox:hover{
     box-shadow: inset 0px 0px 5px 5px black;
@@ -54,9 +58,8 @@ body {
     display: flex;
       text-align: center;
   justify-content: center;
-  
   justify-items: center;
- 
+
   
 
 }
@@ -110,8 +113,20 @@ footer {
 
 }
 
+
+/*userdeck*/
+
 .monitor{
-    width: 500px;
-    height: 200px;
-    background-color: aqua;
+    width: 90%;
+    height: 250px;
+    background-color:  #5E2207;
+    box-shadow: inset 0px 0px 50px #1E0B02;
+    border-radius: 15px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+
 }
