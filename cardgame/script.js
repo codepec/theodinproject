@@ -1,4 +1,9 @@
-let chars = ["snake", "wolves", "tiger", "eagle", "mouse"]
+let chars = ["snake", "wolf", "tiger", "eagle", "mouse"]
+
+
+
+
+
 
 monitor = document.querySelector('.monitor');
 box = document.querySelector('.box');
@@ -31,7 +36,7 @@ function createSnakeCard(){
 }
 
 
-function createtigerCard(){
+function createTigerCard(){
 
 
   const tigerCard = document.createElement('div');
@@ -74,10 +79,36 @@ function createDeck(){
 
     deck.push(chars[arr[i]]);
 
+    }
+
+let card1 = deck[0]
+
+  // iterate
+switch (card1) {
+  case 'snake':
+    createSnakeCard();
+        break;
+  case 'wolf':
+    createWolfCard();
+        break;
+  case 'tiger':
+    createTigerCard();
+        break;
+  case 'eagle':
+    createEagleCard();
+        break;
+  case 'mouse':
+    createMouseCard();
+        break;
+  default:
+    console.log('Error');
 }
 
-monitor.innerHTML = deck;
+return deck;
+
 }
+
+
 
 
 
@@ -86,7 +117,8 @@ mixCards.addEventListener("click", showDeck);
 
 function showDeck(){
 
-  createDeck();
+  createDeck()
+
 
 }
 
