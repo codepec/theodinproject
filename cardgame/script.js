@@ -1,28 +1,22 @@
-let chars = ["snake", "wolf", "tiger", "eagle", "mouse"]
+let chars = ["snake", "wolf", "tiger", "eagle", "mouse"];
 
-
-
-
-
-
-monitor = document.querySelector('.monitor');
-box = document.querySelector('.box');
-newGameButton = document.querySelector('.newGameButton');
-
+monitor = document.querySelector(".monitor");
+box = document.querySelector(".box");
+newGameButton = document.querySelector(".newGameButton");
+card1 = document.querySelector("card1");
 
 // card "snake"
 
-function createSnakeCard(){
+function createSnakeCard() {
+  const snakeCard = document.createElement("div");
 
-
-  const snakeCard = document.createElement('div');
-  
-  snakeCard.innerHTML = '<br><br><br>Attack: 2hp <br><br> snake card <br><br> Life: 2hp' ;
-  snakeCard.className = 'cardBox card1';
-  snakeCard.id = 'card1';
-  snakeCard.style.cssText = 'animation: shake 1s;';
-  
-
+  snakeCard.innerHTML =
+    "<br>snake card <br><br><br> Attack: 2hp <br> Life: 2hp";
+  snakeCard.className = "cardBox card0";
+  snakeCard.id = "card0";
+  snakeCard.style.cssText = "animation: shake 1s; background-color:lightgreen;";
+  const attack = 2;
+  const life = 2;
 
   monitor.appendChild(snakeCard);
 
@@ -31,195 +25,178 @@ function createSnakeCard(){
   //<img src="mouse.jpg" width="60px" />
   //<p>Attack: 3</p>
   //</div>
-
-
 }
 
+function createWolfCard() {
+  const wolfCard = document.createElement("div");
 
-function createWolfCard(){
-
-
-  const wolfCard = document.createElement('div');
-  
-  wolfCard.innerHTML = '<br><br><br>Attack: 3hp <br><br> wolf card <br><br> Life: 2hp' ;
-  wolfCard.className = 'cardBox card1';
-  wolfCard.id = 'card1';
-  wolfCard.style.cssText = "animation: shake 1s;";
-  
-
+  wolfCard.innerHTML =
+    "<br>wolf card <br><br><br> Attack: 3hp <br> Life: 2hp";
+  wolfCard.className = "cardBox card1";
+  wolfCard.id = "card1";
+  wolfCard.style.cssText = "animation: shake 1s;background-color:gray;";
+  const attack = 3;
+  const life = 2;
 
   monitor.appendChild(wolfCard);
 }
 
-function createTigerCard(){
+function createTigerCard() {
+  const tigerCard = document.createElement("div");
 
-
-  const tigerCard = document.createElement('div');
-  
-  tigerCard.innerHTML = '<br><br><br>Attack: 5hp <br><br> tiger card <br><br> Life: 6hp' ;
-  tigerCard.className = 'cardBox card1';
-  tigerCard.id = 'card1';
-  tigerCard.style.cssText = "animation: shake 1s;";
-  
-
+  tigerCard.innerHTML =
+    "<br> tiger card <br><br><br> Attack: 5hp <br> Life: 6hp";
+  tigerCard.className = "cardBox card2";
+  tigerCard.id = "card2";
+  tigerCard.style.cssText = "animation: shake 1s; background-color:#B7410E;";
 
   monitor.appendChild(tigerCard);
 }
 
-function createEagleCard(){
+function createEagleCard() {
+  const eagleCard = document.createElement("div");
 
-
-  const eagleCard = document.createElement('div');
-  
-  eagleCard.innerHTML = '<br><br><br>Attack: 3hp <br><br> eagle card <br><br> Life: 1hp' ;
-  eagleCard.className = 'cardBox card1';
-  eagleCard.id = 'card1';
-  eagleCard.style.cssText = "animation: shake 1s;";
-  
-
+  eagleCard.innerHTML =
+    "<br>eagle card <br><br><br> Attack: 3hp <br> Life: 1hp";
+  eagleCard.className = "cardBox card3";
+  eagleCard.id = "card3";
+  eagleCard.style.cssText = "animation: shake 1s; background-color:white;";
 
   monitor.appendChild(eagleCard);
 }
 
-function createMouseCard(){
+function createMouseCard() {
+  const mouseCard = document.createElement("div");
 
-
-  const mouseCard = document.createElement('div');
-  
-  mouseCard.innerHTML = '<br><br><br>Attack: 1hp <br><br> mouse card <br><br> Life: 3hp' ;
-  mouseCard.className = 'cardBox card1';
-  mouseCard.id = 'card1';
-  mouseCard.style.cssText = "animation: shake 1s;";
-  
-
+  mouseCard.innerHTML =
+    "<br>mouse card <br><br><br> Attack: 1hp <br> Life: 3hp";
+  mouseCard.className = "cardBox card4";
+  mouseCard.id = "card4";
+  mouseCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
 
   monitor.appendChild(mouseCard);
 }
 
-
 //mix cards
 
 function cardSet() {
-let cardSet = [];
-for (let i = 0; i < 5; i++) {
-  
-  x = Math.floor(Math.random() * 5);
-  cardSet.push(x);
-
+  let cardSet = [];
+  for (let i = 0; i < 5; i++) {
+    x = Math.floor(Math.random() * 5);
+    cardSet.push(x);
   }
   return cardSet;
 }
 
 //console.log(cardSet());
 
-
-
-function createDeck(){
+function createDeck() {
   let deck = [];
-  
+
   const arr = cardSet();
-  
-  
-    var length = arr.length;
-    for (var i = 0; i < length; i++) {
 
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
     deck.push(chars[arr[i]]);
+  }
 
+  //let card1 = deck[0]
+
+  let b;
+  for (b = 0; b < 5; b++) {
+    // iterate
+    switch (deck[b]) {
+      case "snake":
+        createSnakeCard();
+        break;
+      case "wolf":
+        createWolfCard();
+        break;
+      case "tiger":
+        createTigerCard();
+        break;
+      case "eagle":
+        createEagleCard();
+        break;
+      case "mouse":
+        createMouseCard();
+        break;
+      default:
+        console.log("Error");
     }
+  }
 
-//let card1 = deck[0]
-
-let b;
-for (b = 0; b < 5; b++) {
-
-  // iterate
-switch (deck[b]) {
-  case 'snake':
-    createSnakeCard();
-        break;
-  case 'wolf':
-    createWolfCard();
-        break;
-  case 'tiger':
-    createTigerCard();
-        break;
-  case 'eagle':
-    createEagleCard();
-        break;
-  case 'mouse':
-    createMouseCard();
-        break;
-  default:
-    console.log('Error');
+  return deck;
 }
-}
-
-return deck;
-
-
-}
-
-
-
-
-
 
 mixCards.addEventListener("click", showDeck);
 
-function showDeck(){
-
-  createDeck()
+function showDeck() {
+  createDeck();
+  createDeckCPU();
+  
   mixCards.disabled = true;
-
-
 }
-
-
 
 //create HTML card design
 
-
-
-
-
 function addCardDeck() {
-
   createSnakeCard();
-
+ 
 }
 
-
 // attach onclick event handler to add button
-document.getElementById('addCards').addEventListener('click', addCardDeck);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//document.getElementById("addCards").addEventListener("click", addCardDeck);
 
 // add cards (push method not implemented)
 
 newGameButton.addEventListener("click", showNewCards);
 
-
-function showNewCards(){
-  
-  monitor.innerText = ""
+function showNewCards() {
+  monitor.innerText = "";
+  monitorCPU.innerText = "";
   mixCards.disabled = false;
+}
+
+
+
+
+
+function createDeckCPU() {
+ 
+  const mouseCard = document.createElement("div");
+
+  mouseCard.innerHTML =
+    "<br>mouse card <br><br><br> Attack: 1hp <br> Life: 3hp";
+  mouseCard.className = "cardBox card4";
+  mouseCard.id = "cardCPU4";
+  mouseCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
+  const attack = 1;
+  const life = 3;
+  monitorCPU.appendChild(mouseCard);
 
 }
+
+
+function attackPlayer(){
+  card1.addEventListener("click", showAlert);
+}
+
+
+
+
+function showAlert(){
+  console.log("Achtung");
+}
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -258,7 +235,7 @@ let x = Math.floor(Math.random() * 5);
 
 }*/
 
-  /*
+/*
   var div = document.getElementById('hobby');
 
 function addHobby() {
