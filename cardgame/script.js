@@ -1,9 +1,15 @@
-let chars = ["snake", "wolf", "tiger", "eagle", "mouse"];
+let chars = ["<br>snake card <br><br><br> Attack: 2hp <br> Life: 2hp", "<br>wolf card <br><br><br> Attack: 3hp <br> Life: 2hp", "<br> tiger card <br><br><br> Attack: 5hp <br> Life: 6hp", "eagle", "mouse"];
 
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
 newGameButton = document.querySelector(".newGameButton");
-card1 = document.querySelector("card1");
+card1 = document.getElementById("card1");
+card2 = document.getElementById("card2");
+card3 = document.getElementById("card3");
+card4 = document.getElementById("card4");
+card5 = document.getElementById("card5");
+
+
 
 // card "snake"
 
@@ -100,8 +106,26 @@ function createDeck() {
     deck.push(chars[arr[i]]);
   }
 
+  card1.innerHTML = deck[0]
+  card2.innerHTML = deck[1]
+  card3.innerHTML = deck[2]
+  card4.innerHTML = deck[3]
+  card5.innerHTML = deck[4]
+
   //let card1 = deck[0]
 
+
+
+
+
+
+
+
+
+
+
+
+  /*
   let b;
   for (b = 0; b < 5; b++) {
     // iterate
@@ -127,6 +151,8 @@ function createDeck() {
   }
 
   return deck;
+
+*/
 }
 
 mixCards.addEventListener("click", showDeck);
@@ -153,7 +179,11 @@ function addCardDeck() {
 newGameButton.addEventListener("click", showNewCards);
 
 function showNewCards() {
-  monitor.innerText = "";
+  card1.innerText = "";
+  card2.innerText = "";
+  card3.innerText = "";
+  card4.innerText = "";
+  card5.innerText = "";
   monitorCPU.innerText = "";
   mixCards.disabled = false;
 }
@@ -178,15 +208,13 @@ function createDeckCPU() {
 }
 
 
-function attackPlayer(){
-  card1.addEventListener("click", showAlert);
-}
 
 
+card1.addEventListener("click", showAlert);
 
 
 function showAlert(){
-  console.log("Achtung");
+  alert("Achtung");
 }
 
 
