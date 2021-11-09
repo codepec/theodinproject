@@ -1,4 +1,10 @@
-let chars = ["<br>snake card <br><br><br> Attack: 2hp <br> Life: 2hp", "<br>wolf card <br><br><br> Attack: 3hp <br> Life: 2hp", "<br> tiger card <br><br><br> Attack: 5hp <br> Life: 6hp", "eagle", "mouse"];
+let chars = [
+  "<br>snake<br><br><br> Attack: 2hp <br> Life: 2hp", 
+  "<br>wolf<br><br><br> Attack: 3hp <br> Life: 2hp", 
+  "<br>tiger<br><br><br> Attack: 5hp <br> Life: 6hp", 
+  "<br>eagle<br><br><br> Attack: 2hp <br> Life: 3hp", 
+  "<br>mouse<br><br><br> Attack: 2hp <br> Life: 1hp"
+];
 
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
@@ -13,75 +19,9 @@ card5 = document.getElementById("card5");
 
 // card "snake"
 
-function createSnakeCard() {
-  const snakeCard = document.createElement("div");
 
-  snakeCard.innerHTML =
-    "<br>snake card <br><br><br> Attack: 2hp <br> Life: 2hp";
-  snakeCard.className = "cardBox card0";
-  snakeCard.id = "card0";
-  snakeCard.style.cssText = "animation: shake 1s; background-color:lightgreen;";
-  const attack = 2;
-  const life = 2;
 
-  monitor.appendChild(snakeCard);
 
-  //<div class="cardBox card1" id="card1">
-  //<p>Life: 1hp</p>
-  //<img src="mouse.jpg" width="60px" />
-  //<p>Attack: 3</p>
-  //</div>
-}
-
-function createWolfCard() {
-  const wolfCard = document.createElement("div");
-
-  wolfCard.innerHTML =
-    "<br>wolf card <br><br><br> Attack: 3hp <br> Life: 2hp";
-  wolfCard.className = "cardBox card1";
-  wolfCard.id = "card1";
-  wolfCard.style.cssText = "animation: shake 1s;background-color:gray;";
-  const attack = 3;
-  const life = 2;
-
-  monitor.appendChild(wolfCard);
-}
-
-function createTigerCard() {
-  const tigerCard = document.createElement("div");
-
-  tigerCard.innerHTML =
-    "<br> tiger card <br><br><br> Attack: 5hp <br> Life: 6hp";
-  tigerCard.className = "cardBox card2";
-  tigerCard.id = "card2";
-  tigerCard.style.cssText = "animation: shake 1s; background-color:#B7410E;";
-
-  monitor.appendChild(tigerCard);
-}
-
-function createEagleCard() {
-  const eagleCard = document.createElement("div");
-
-  eagleCard.innerHTML =
-    "<br>eagle card <br><br><br> Attack: 3hp <br> Life: 1hp";
-  eagleCard.className = "cardBox card3";
-  eagleCard.id = "card3";
-  eagleCard.style.cssText = "animation: shake 1s; background-color:white;";
-
-  monitor.appendChild(eagleCard);
-}
-
-function createMouseCard() {
-  const mouseCard = document.createElement("div");
-
-  mouseCard.innerHTML =
-    "<br>mouse card <br><br><br> Attack: 1hp <br> Life: 3hp";
-  mouseCard.className = "cardBox card4";
-  mouseCard.id = "card4";
-  mouseCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
-
-  monitor.appendChild(mouseCard);
-}
 
 //mix cards
 
@@ -113,8 +53,6 @@ function createDeck() {
   card5.innerHTML = deck[4]
 
   //let card1 = deck[0]
-
-
 
 
 
