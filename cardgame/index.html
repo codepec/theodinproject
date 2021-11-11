@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Card Game Honor</title>
+    <title>Honor - A Card Game </title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
@@ -36,12 +36,23 @@
     <button id="add">Add hobby</button>
     -->
 
-        <h1>Card Game Honor</h1>
+        <h1>Honor - A Card Game</h1>
+
+        <div class="container" >
+        <p id="score">Player vs Enemy<br>1 : 0</p>
+        </div>
 
         <div class="container">
+
+          <button id="points" class="sideLayer">Points: CPU - Player</button>
       
           <div class="monitorCPU" id="monitorCPU"></div>
+          
+          <button id="joker" class="sideLayer">Joker</button>
+
         </div>
+
+        
 
         <div class="line"></div>
        
@@ -54,6 +65,8 @@
   
 
         <div class="container">
+          <button id="nextRound" class="sideButton">next round</button>
+
           <div class="monitor" id="monitor">
             <div class="cardBox card1" id="card1"></div>
             <div class="cardBox card2" id="card2"></div>
@@ -63,11 +76,13 @@
             
           </div>
 
-          <button id="mixCards">mix cards</button>
+          <button id="mixCards" class="sideButton">mix cards</button>
         </div>
 
       
       </div>
+
+      
       <div class="footer">
         <footer>
           created with <i class="fa fa-heart" aria-hidden="true"></i> by CodePec

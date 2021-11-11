@@ -56,7 +56,8 @@ function createDeck() {
 
 
 
-
+  
+  console.log(deck);
 
 
 
@@ -88,10 +89,10 @@ function createDeck() {
     }
   }
 
-  return deck;
+  
 
 */
-}
+} 
 
 mixCards.addEventListener("click", showDeck);
 
@@ -124,6 +125,7 @@ function showNewCards() {
   card5.innerText = "";
   monitorCPU.innerText = "";
   mixCards.disabled = false;
+ 
 }
 
 
@@ -148,12 +150,7 @@ function createDeckCPU() {
 
 
 
-card1.addEventListener("click", showAlert);
 
-
-function showAlert(){
-  alert("Achtung");
-}
 
 
 
@@ -285,3 +282,69 @@ document.getElementById('add').addEventListener('click', addHobby);
 document.getElementById('remove').addEventListener('click', removeHobby);
 
 */
+
+
+let health = []
+
+
+const snakeCardAttributes = {
+  attack: 2,
+  health: 2,
+  color: "green",
+  specialAttack: "poisonous attack",
+};
+
+const wolfCardAttributes = {
+  attack: 3,
+  health: 2,
+  color: "gray",
+  specialAttack: "rabies",
+};
+
+const tigerCardAttributes = {
+  attack: 5,
+  health: 6,
+  color: "orange",
+  specialAttack: "claw attack",
+};
+
+
+const eagleCardAttributes = {
+  attack: 2,
+  health: 3,
+  color: "white",
+  specialAttack: "air attack",
+};
+
+const mouseCardAttributes = {
+  attack: 2,
+  health: 1,
+  color: "lightgray",
+  specialAttack: "bite",
+};
+
+
+
+function attackAttack() {
+
+    let Player = tigerCardAttributes.health - mouseCardAttributes.attack;
+
+    if(Player <= 0) {
+      alert("player is dead");
+    }
+    else{
+      alert("player is still alive")
+    }
+
+}
+
+card1.addEventListener("click", showAlert);
+
+
+function showAlert(){
+  alert("Achtung");
+}
+
+card2.addEventListener("click", attackAttack);
+
+
