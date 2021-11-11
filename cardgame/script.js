@@ -62,23 +62,6 @@ function createDeck() {
 
   //let card1 = deck[0]
 
-  if (deck[0] == chars[0]){
-    console.log("aaaahhhh its a snake");
-    let Attack = snakeCardAttributes.attack;
-    let Health = snakeCardAttributes.health;
-  }else if (deck[0] == chars[1]){
-    console.log("aaaahhhh its a wolf");
-    console.log(wolfCardAttributes.attack, wolfCardAttributes.health);
-  }else if (deck[0] == chars[2]){
-    console.log("aaaahhhh its a tiger");
-  }else if (deck[0] == chars[3]){
-    console.log("aaaahhhh its an eagle");
-  }else if (deck[0] == chars[4]){
-    console.log("aaaahhhh its a mouse");
-  }else{
-    console.log("aaaahhhh its an error");
-  }
-
 
   
  
@@ -314,7 +297,7 @@ document.getElementById('remove').addEventListener('click', removeHobby);
 */
 
 
-let health = []
+
 
 
 const snakeCardAttributes = {
@@ -358,31 +341,34 @@ const mouseCardAttributes = {
   specialAttack: "bite",
 };
 
+let attackEnemy = 3;
 
+let attack;
+let health;
 
 function attackAttack() {
 
+ 
+  compareArray();
+  let healthPlayer = health - attackEnemy;
 
+console.log(healthPlayer);
+console.log(health);
+console.log(attackEnemy);
 
-  let Player = mouseCardAttributes.health - mouseCardAttributes.attack;
-
-    if(Player <= 0) {
-      alert("player is dead");
-      console.log(deck);
-      deck.slice
-
-
+    if(healthPlayer <= 0) {
       
+      alert("card is dead");
+      console.log(deck);
       deck.splice(1, 1, 'Empty');
-      return deck;
-
-
-
+      card2.innerHTML = deck[1]
     }
     else{
-      alert("player is still alive")
-    }
+      alert("card is still alive")
+      console.log("Health left: " + healthPlayer)
 
+    }
+    
 }
 
 
@@ -396,7 +382,36 @@ card2.addEventListener("click", attackAttack);
 function compareArray(){
  
 
+  if (deck[1] == chars[0]){
+    console.log("aaaahhhh its a snake");
+    attack = snakeCardAttributes.attack;
+    health = snakeCardAttributes.health;
+  }else if (deck[1] == chars[1]){
+    console.log("aaaahhhh its a wolf");
+    attack = wolfCardAttributes.attack;
+    health = wolfCardAttributes.health;
+  }else if (deck[1] == chars[2]){
+    console.log("aaaahhhh its a tiger");
+    attack = tigerCardAttributes.attack;
+    health = tigerCardAttributes.health;
+  }else if (deck[1] == chars[3]){
+    console.log("aaaahhhh its an eagle");
+    attack = eagleCardAttributes.attack;
+    health = eagleCardAttributes.health;
+  }else if (deck[1] == chars[4]){
+    console.log("aaaahhhh its a mouse");
+    attack = mouseCardAttributes.attack;
+    health = mouseCardAttributes.health;
+  }else{
+    console.log("aaaahhhh its an error");
+  }
 
+
+
+
+
+
+/*
 
   let b;
   for (b = 0; b < 5; b++) {
@@ -421,6 +436,6 @@ function compareArray(){
         console.log("Error");
     }
   }
-
+*/
 
 }
