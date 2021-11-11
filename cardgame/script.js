@@ -1,10 +1,15 @@
 let chars = [
+  "snake", "wolf", "tiger", "eagle", "mouse"
+];
+
+/*let chars = [
   "<br>snake<br><br><br> Attack: 2hp <br> Life: 2hp", 
   "<br>wolf<br><br><br> Attack: 3hp <br> Life: 2hp", 
   "<br>tiger<br><br><br> Attack: 5hp <br> Life: 6hp", 
   "<br>eagle<br><br><br> Attack: 2hp <br> Life: 3hp", 
   "<br>mouse<br><br><br> Attack: 2hp <br> Life: 1hp"
 ];
+*/
 
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
@@ -36,9 +41,12 @@ function cardSet() {
 
 //console.log(cardSet());
 
-function createDeck() {
-  let deck = [];
+let deck = [];
 
+function createDeck() {
+ 
+  
+  
   const arr = cardSet();
 
   var length = arr.length;
@@ -54,11 +62,27 @@ function createDeck() {
 
   //let card1 = deck[0]
 
+  if (deck[0] == chars[0]){
+    console.log("aaaahhhh its a snake");
+    let Attack = snakeCardAttributes.attack;
+    let Health = snakeCardAttributes.health;
+  }else if (deck[0] == chars[1]){
+    console.log("aaaahhhh its a wolf");
+    console.log(wolfCardAttributes.attack, wolfCardAttributes.health);
+  }else if (deck[0] == chars[2]){
+    console.log("aaaahhhh its a tiger");
+  }else if (deck[0] == chars[3]){
+    console.log("aaaahhhh its an eagle");
+  }else if (deck[0] == chars[4]){
+    console.log("aaaahhhh its a mouse");
+  }else{
+    console.log("aaaahhhh its an error");
+  }
 
 
   
-  console.log(deck);
-
+ 
+  return deck;
 
 
 
@@ -92,13 +116,18 @@ function createDeck() {
   
 
 */
-} 
+}  
+
+
+
+
 
 mixCards.addEventListener("click", showDeck);
 
 function showDeck() {
   createDeck();
   createDeckCPU();
+  
   
   mixCards.disabled = true;
 }
@@ -125,6 +154,7 @@ function showNewCards() {
   card5.innerText = "";
   monitorCPU.innerText = "";
   mixCards.disabled = false;
+  deck = [];
  
 }
 
@@ -288,6 +318,7 @@ let health = []
 
 
 const snakeCardAttributes = {
+  name: "snake",
   attack: 2,
   health: 2,
   color: "green",
@@ -295,6 +326,7 @@ const snakeCardAttributes = {
 };
 
 const wolfCardAttributes = {
+  name: "wolf",
   attack: 3,
   health: 2,
   color: "gray",
@@ -302,6 +334,7 @@ const wolfCardAttributes = {
 };
 
 const tigerCardAttributes = {
+  name: "tiger",
   attack: 5,
   health: 6,
   color: "orange",
@@ -310,6 +343,7 @@ const tigerCardAttributes = {
 
 
 const eagleCardAttributes = {
+  name: "eagle",
   attack: 2,
   health: 3,
   color: "white",
@@ -317,6 +351,7 @@ const eagleCardAttributes = {
 };
 
 const mouseCardAttributes = {
+  name: "mouse",
   attack: 2,
   health: 1,
   color: "lightgray",
@@ -327,10 +362,22 @@ const mouseCardAttributes = {
 
 function attackAttack() {
 
-    let Player = tigerCardAttributes.health - mouseCardAttributes.attack;
+
+
+  let Player = mouseCardAttributes.health - mouseCardAttributes.attack;
 
     if(Player <= 0) {
       alert("player is dead");
+      console.log(deck);
+      deck.slice
+
+
+      
+      deck.splice(1, 1, 'Empty');
+      return deck;
+
+
+
     }
     else{
       alert("player is still alive")
@@ -338,13 +385,42 @@ function attackAttack() {
 
 }
 
-card1.addEventListener("click", showAlert);
-
-
-function showAlert(){
-  alert("Achtung");
-}
 
 card2.addEventListener("click", attackAttack);
 
 
+
+
+
+
+function compareArray(){
+ 
+
+
+
+  let b;
+  for (b = 0; b < 5; b++) {
+    // iterate
+    switch (deck[b]) {
+      case "snake":
+        createSnakeCard();
+        break;
+      case "wolf":
+        createWolfCard();
+        break;
+      case "tiger":
+        createTigerCard();
+        break;
+      case "eagle":
+        createEagleCard();
+        break;
+      case "mouse":
+        createMouseCard();
+        break;
+      default:
+        console.log("Error");
+    }
+  }
+
+
+}
