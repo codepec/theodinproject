@@ -147,16 +147,19 @@ function showNewCards() {
 
 function createDeckCPU() {
  
-  const mouseCard = document.createElement("div");
+  const CPUCard = document.createElement("div");
 
-  mouseCard.innerHTML =
-    "<br>mouse card <br><br><br> Attack: 1hp <br> Life: 3hp";
-  mouseCard.className = "cardBox card4";
-  mouseCard.id = "cardCPU4";
-  mouseCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
-  const attack = 1;
-  const life = 3;
-  monitorCPU.appendChild(mouseCard);
+  CPUCard.innerHTML = snakeCardAttributes.name + "<br>" 
+  + "Attack: " + snakeCardAttributes.attack + " att<br>" 
+  + "Health: " + snakeCardAttributes.health + " hp <br>" 
+  + "Special: " + snakeCardAttributes.specialAttack;
+
+
+    CPUCard.className = "cardBox card4";
+    CPUCard.id = "cardCPU4";
+    CPUCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
+
+  monitorCPU.appendChild(CPUCard);
 
 }
 
@@ -298,7 +301,7 @@ document.getElementById('remove').addEventListener('click', removeHobby);
 
 
 
-
+// set attributes
 
 const snakeCardAttributes = {
   name: "snake",
@@ -361,12 +364,12 @@ console.log(attackEnemy);
       alert("card is dead");
       console.log(deck);
       deck.splice(1, 1, 'Empty');
-      card2.innerHTML = deck[1]
+      card2.innerHTML = deck[1];
     }
     else{
       alert("card is still alive")
       console.log("Health left: " + healthPlayer)
-
+      cardCPU.innerHTML = deckCPU[1];
     }
     
 }
