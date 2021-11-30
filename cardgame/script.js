@@ -2,15 +2,6 @@ let chars = [
   "snake", "wolf", "tiger", "eagle", "mouse"
 ];
 
-/*let chars = [
-  "<br>snake<br><br><br> Attack: 2hp <br> Life: 2hp", 
-  "<br>wolf<br><br><br> Attack: 3hp <br> Life: 2hp", 
-  "<br>tiger<br><br><br> Attack: 5hp <br> Life: 6hp", 
-  "<br>eagle<br><br><br> Attack: 2hp <br> Life: 3hp", 
-  "<br>mouse<br><br><br> Attack: 2hp <br> Life: 1hp"
-];
-*/
-
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
 newGameButton = document.querySelector(".newGameButton");
@@ -61,9 +52,6 @@ function createDeck() {
   card5.innerHTML = deck[4]
 
   //let card1 = deck[0]
-
-
-  
  
   return deck;
 
@@ -143,11 +131,9 @@ function showNewCards() {
 
 
 
-
+const CPUCard = document.createElement("div");
 
 function createDeckCPU() {
- 
-  const CPUCard = document.createElement("div");
 
   CPUCard.innerHTML = snakeCardAttributes.name + "<br>" 
   + "Attack: " + snakeCardAttributes.attack + " att<br>" 
@@ -162,6 +148,64 @@ function createDeckCPU() {
   monitorCPU.appendChild(CPUCard);
 
 }
+
+
+
+
+
+
+
+//mix cards
+
+function cardSetCPUnew() {
+  let cardSet = [];
+  for (let i = 0; i < 5; i++) {
+    x = Math.floor(Math.random() * 5);
+    cardSet.push(x);
+  }
+  return cardSet;
+}
+
+//console.log(cardSet());
+
+let deckCPU = [];
+
+function createDeckCPUnew() {
+ 
+  
+  
+  const arr = cardSetCPUnew();
+
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+    deckCPU.push(chars[arr[i]]);
+  }
+
+  card1.innerHTML = deckCPU[0]
+  card2.innerHTML = deckCPU[1]
+  card3.innerHTML = deckCPU[2]
+  card4.innerHTML = deckCPU[3]
+  card5.innerHTML = deckCPU[4]
+
+  //let card1 = deck[0]
+  console.log(deckCPU);
+  return deckCPU;
+
+ 
+
+}  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -344,20 +388,20 @@ const mouseCardAttributes = {
   specialAttack: "bite",
 };
 
-let attackEnemy = 3;
+let attackE = snakeCardAttributes.attack;
+let healthE = snakeCardAttributes.health;
 
-let attack;
-let health;
+let attackP;
+let healthP;
 
 function attackAttack() {
 
  
   compareArray();
-  let healthPlayer = health - attackEnemy;
+  let healthPlayer = healthP - attackE;
+  let healthEnemy = healthE - attackP;
 
-console.log(healthPlayer);
-console.log(health);
-console.log(attackEnemy);
+
 
     if(healthPlayer <= 0) {
       
@@ -365,11 +409,18 @@ console.log(attackEnemy);
       console.log(deck);
       deck.splice(1, 1, 'Empty');
       card2.innerHTML = deck[1];
+
+      console.log("Health left Player: " + healthPlayer 
+      + " Health left CPU: " + healthEnemy)
+
     }
     else{
       alert("card is still alive")
-      console.log("Health left: " + healthPlayer)
-      cardCPU.innerHTML = deckCPU[1];
+      CPUCard.innerHTML = 'Empty';
+
+      console.log("Health left Player: " + healthPlayer 
+      + " Health left CPU: " + healthEnemy)
+
     }
     
 }
@@ -387,24 +438,24 @@ function compareArray(){
 
   if (deck[1] == chars[0]){
     console.log("aaaahhhh its a snake");
-    attack = snakeCardAttributes.attack;
-    health = snakeCardAttributes.health;
+    attackP = snakeCardAttributes.attack;
+    healthP = snakeCardAttributes.health;
   }else if (deck[1] == chars[1]){
     console.log("aaaahhhh its a wolf");
-    attack = wolfCardAttributes.attack;
-    health = wolfCardAttributes.health;
+    attackP = wolfCardAttributes.attack;
+    healthP = wolfCardAttributes.health;
   }else if (deck[1] == chars[2]){
     console.log("aaaahhhh its a tiger");
-    attack = tigerCardAttributes.attack;
-    health = tigerCardAttributes.health;
+    attackP = tigerCardAttributes.attack;
+    healthP = tigerCardAttributes.health;
   }else if (deck[1] == chars[3]){
     console.log("aaaahhhh its an eagle");
-    attack = eagleCardAttributes.attack;
-    health = eagleCardAttributes.health;
+    attackP = eagleCardAttributes.attack;
+    healthP = eagleCardAttributes.health;
   }else if (deck[1] == chars[4]){
     console.log("aaaahhhh its a mouse");
-    attack = mouseCardAttributes.attack;
-    health = mouseCardAttributes.health;
+    attackP = mouseCardAttributes.attack;
+    healthP = mouseCardAttributes.health;
   }else{
     console.log("aaaahhhh its an error");
   }
