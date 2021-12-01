@@ -19,5 +19,4 @@ https://codepec.github.io/theodinproject/landingPage/index.html
 |
 |
 6. myOwnProject: CardGame
-
 https://codepec.github.io/theodinproject/cardgame/index.html
