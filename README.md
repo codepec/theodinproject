@@ -18,3 +18,6 @@ https://codepec.github.io/theodinproject/landingPage/index.html
 5. Project: Calculator
 |
 |
+6. myOwnProject: CardGame
+
+https://codepec.github.io/theodinproject/cardgame/index.html
