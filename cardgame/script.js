@@ -46,7 +46,9 @@ const mouseCardAttributes = {
 //set array Player and Enemy
 
 let chars = [
-  snakeCardAttributes.name, wolfCardAttributes.name, tigerCardAttributes.name, eagleCardAttributes.name, mouseCardAttributes.name
+  snakeCardAttributes, wolfCardAttributes, 
+  tigerCardAttributes, eagleCardAttributes, 
+  mouseCardAttributes
 ];
 
 
@@ -55,11 +57,12 @@ let chars = [
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
 newGameButton = document.querySelector(".newGameButton");
-card1 = document.getElementById("card1");
-card2 = document.getElementById("card2");
-card3 = document.getElementById("card3");
-card4 = document.getElementById("card4");
-card5 = document.getElementById("card5");
+
+
+
+
+
+
 
 
 
@@ -76,7 +79,14 @@ function cardSet() {
 
 //create card deck Player
 
+const card1 = document.createElement("div");
+const card2 = document.createElement("div");
+const card3 = document.createElement("div");
+const card4 = document.createElement("div");
+const card5 = document.createElement("div");
+
 let deck = [];
+
 
 function createDeck() {
  
@@ -89,13 +99,46 @@ function createDeck() {
     deck.push(chars[arr[i]]);
   }
 
-  card1.innerHTML = deck[0]
-  card2.innerHTML = deck[1]
-  card3.innerHTML = deck[2]
-  card4.innerHTML = deck[3]
-  card5.innerHTML = deck[4]
+ 
 
   //let card1 = deck[0]
+
+
+
+
+
+    card1.innerHTML = deck[0].name + "<br><br>attack: " + deck[0].attack + "<br>health: " + deck[0].health;
+    card1.className = "cardBox card1";
+    card1.id = "card1Player";
+    card1.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    monitor.appendChild(card1);
+
+    card2.innerHTML = deck[1].name + "<br><br>attack: " + deck[1].attack + "<br>health: " + deck[1].health;
+    card2.className = "cardBox card2";
+    card2.id = "card2Player";
+    card2.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    monitor.appendChild(card2);
+
+    card3.innerHTML = deck[2].name + "<br><br>attack: " + deck[2].attack + "<br>health: " + deck[2].health;
+    card3.className = "cardBox card3";
+    card3.id = "card3Player";
+    card3.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    monitor.appendChild(card3);
+
+    card4.innerHTML = deck[3].name + "<br><br>attack: " + deck[3].attack + "<br>health: " + deck[3].health;
+    card4.className = "cardBox card4";
+    card4.id = "card4Player";
+    card4.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    monitor.appendChild(card4);
+
+    card5.innerHTML = deck[4].name + "<br><br>attack: " + deck[4].attack + "<br>health: " + deck[4].health;
+    card5.className = "cardBox card5";
+    card5.id = "card5Player";
+    card5.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    monitor.appendChild(card5);
+
+
+
  
   return deck;
 
@@ -137,6 +180,10 @@ function createDeck() {
 
 
 
+
+
+
+
 mixCards.addEventListener("click", showDeck);
 
 function showDeck() {
@@ -165,11 +212,7 @@ function addCardDeck() {
 newGameButton.addEventListener("click", showNewCards);
 
 function showNewCards() {
-  card1.innerText = "";
-  card2.innerText = "";
-  card3.innerText = "";
-  card4.innerText = "";
-  card5.innerText = "";
+  monitor.innerHTML = "";
   monitorCPU.innerText = "";
   mixCards.disabled = false;
   deck = [];
@@ -186,7 +229,7 @@ function createDeckCPU() {
 
   createDeckCPUnew();
 
-  CPUCard.innerHTML = deckCPU[0];
+  CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
 
 
     CPUCard.className = "cardBox card4";
@@ -416,7 +459,8 @@ function attackAttack() {
       alert("card is still alive")
       
       deckCPU.shift();
-      CPUCard.innerHTML = deckCPU[0];
+      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
+
 
       console.log("Health left Player: " + healthPlayer 
       + " Health left CPU: " + healthEnemy);
