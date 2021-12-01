@@ -1,6 +1,56 @@
+
+// set card attributes
+
+const snakeCardAttributes = {
+  name: "snake",
+  attack: 2,
+  health: 2,
+  color: "green",
+  specialAttack: "poisonous attack",
+};
+
+const wolfCardAttributes = {
+  name: "wolf",
+  attack: 3,
+  health: 2,
+  color: "gray",
+  specialAttack: "rabies",
+};
+
+const tigerCardAttributes = {
+  name: "tiger",
+  attack: 5,
+  health: 6,
+  color: "orange",
+  specialAttack: "claw attack",
+};
+
+
+const eagleCardAttributes = {
+  name: "eagle",
+  attack: 2,
+  health: 3,
+  color: "white",
+  specialAttack: "air attack",
+};
+
+const mouseCardAttributes = {
+  name: "mouse",
+  attack: 2,
+  health: 1,
+  color: "lightgray",
+  specialAttack: "bite",
+};
+
+
+//set array Player and Enemy
+
 let chars = [
-  "snake", "wolf", "tiger", "eagle", "mouse"
+  snakeCardAttributes.name, wolfCardAttributes.name, tigerCardAttributes.name, eagleCardAttributes.name, mouseCardAttributes.name
 ];
+
+
+//set DOM Javascript to HTML
 
 monitor = document.querySelector(".monitor");
 box = document.querySelector(".box");
@@ -13,13 +63,7 @@ card5 = document.getElementById("card5");
 
 
 
-// card "snake"
-
-
-
-
-
-//mix cards
+//mix cards Player
 
 function cardSet() {
   let cardSet = [];
@@ -30,7 +74,7 @@ function cardSet() {
   return cardSet;
 }
 
-//console.log(cardSet());
+//create card deck Player
 
 let deck = [];
 
@@ -115,6 +159,9 @@ function addCardDeck() {
 
 // add cards (push method not implemented)
 
+
+// new game
+
 newGameButton.addEventListener("click", showNewCards);
 
 function showNewCards() {
@@ -126,19 +173,20 @@ function showNewCards() {
   monitorCPU.innerText = "";
   mixCards.disabled = false;
   deck = [];
+  deckCPU = [];
  
 }
 
 
+// create Enemy card deck
 
 const CPUCard = document.createElement("div");
 
 function createDeckCPU() {
 
-  CPUCard.innerHTML = snakeCardAttributes.name + "<br>" 
-  + "Attack: " + snakeCardAttributes.attack + " att<br>" 
-  + "Health: " + snakeCardAttributes.health + " hp <br>" 
-  + "Special: " + snakeCardAttributes.specialAttack;
+  createDeckCPUnew();
+
+  CPUCard.innerHTML = deckCPU[0];
 
 
     CPUCard.className = "cardBox card4";
@@ -148,10 +196,6 @@ function createDeckCPU() {
   monitorCPU.appendChild(CPUCard);
 
 }
-
-
-
-
 
 
 
@@ -181,11 +225,6 @@ function createDeckCPUnew() {
     deckCPU.push(chars[arr[i]]);
   }
 
-  card1.innerHTML = deckCPU[0]
-  card2.innerHTML = deckCPU[1]
-  card3.innerHTML = deckCPU[2]
-  card4.innerHTML = deckCPU[3]
-  card5.innerHTML = deckCPU[4]
 
   //let card1 = deck[0]
   console.log(deckCPU);
@@ -345,48 +384,7 @@ document.getElementById('remove').addEventListener('click', removeHobby);
 
 
 
-// set attributes
 
-const snakeCardAttributes = {
-  name: "snake",
-  attack: 2,
-  health: 2,
-  color: "green",
-  specialAttack: "poisonous attack",
-};
-
-const wolfCardAttributes = {
-  name: "wolf",
-  attack: 3,
-  health: 2,
-  color: "gray",
-  specialAttack: "rabies",
-};
-
-const tigerCardAttributes = {
-  name: "tiger",
-  attack: 5,
-  health: 6,
-  color: "orange",
-  specialAttack: "claw attack",
-};
-
-
-const eagleCardAttributes = {
-  name: "eagle",
-  attack: 2,
-  health: 3,
-  color: "white",
-  specialAttack: "air attack",
-};
-
-const mouseCardAttributes = {
-  name: "mouse",
-  attack: 2,
-  health: 1,
-  color: "lightgray",
-  specialAttack: "bite",
-};
 
 let attackE = snakeCardAttributes.attack;
 let healthE = snakeCardAttributes.health;
@@ -414,13 +412,21 @@ function attackAttack() {
       + " Health left CPU: " + healthEnemy)
 
     }
-    else{
+    else if (healthPlayer > 0 & deckCPU.length > 1) {
       alert("card is still alive")
-      CPUCard.innerHTML = 'Empty';
+      
+      deckCPU.shift();
+      CPUCard.innerHTML = deckCPU[0];
 
       console.log("Health left Player: " + healthPlayer 
-      + " Health left CPU: " + healthEnemy)
+      + " Health left CPU: " + healthEnemy);
 
+    }
+
+    else {
+      CPUCard.innerHTML = "no more cards";
+      alert("Player wins");
+      //scorePlayer =+ 1;
     }
     
 }
