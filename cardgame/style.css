@@ -156,7 +156,7 @@ h1 {
 
 .monitorCPU {
   width: 80%;
-  height: 250px;
+  height: 150px;
   background-color: #5e2207;
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
@@ -172,7 +172,7 @@ h1 {
 
 .monitor {
   width: 80%;
-  height: 250px;
+  height: 150px;
   background-color: #5e2207;
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
@@ -189,7 +189,7 @@ h1 {
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
   writing-mode: vertical-lr;
-  padding:15px;
+  padding:10px;
   font-size: 30px;
   font-family: 'Amatic SC', cursive;
   
@@ -200,7 +200,7 @@ h1 {
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
   writing-mode: vertical-lr;
-  padding:15px;
+  padding:30px;
   font-size: 30px;
   font-family: 'Amatic SC', cursive;
   

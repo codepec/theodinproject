@@ -110,31 +110,31 @@ function createDeck() {
     card1.innerHTML = deck[0].name + "<br><br>attack: " + deck[0].attack + "<br>health: " + deck[0].health;
     card1.className = "cardBox card1";
     card1.id = "card1Player";
-    card1.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    card1.style.cssText = "animation: shake 1s; background-color:" + deck[0].color + ";";
     monitor.appendChild(card1);
 
     card2.innerHTML = deck[1].name + "<br><br>attack: " + deck[1].attack + "<br>health: " + deck[1].health;
     card2.className = "cardBox card2";
     card2.id = "card2Player";
-    card2.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    card2.style.cssText = "animation: shake 1s; background-color:" + deck[1].color + ";";
     monitor.appendChild(card2);
 
     card3.innerHTML = deck[2].name + "<br><br>attack: " + deck[2].attack + "<br>health: " + deck[2].health;
     card3.className = "cardBox card3";
     card3.id = "card3Player";
-    card3.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    card3.style.cssText = "animation: shake 1s; background-color:" + deck[2].color + ";";
     monitor.appendChild(card3);
 
     card4.innerHTML = deck[3].name + "<br><br>attack: " + deck[3].attack + "<br>health: " + deck[3].health;
     card4.className = "cardBox card4";
     card4.id = "card4Player";
-    card4.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    card4.style.cssText = "animation: shake 1s; background-color:" + deck[3].color + ";";
     monitor.appendChild(card4);
 
     card5.innerHTML = deck[4].name + "<br><br>attack: " + deck[4].attack + "<br>health: " + deck[4].health;
     card5.className = "cardBox card5";
     card5.id = "card5Player";
-    card5.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    card5.style.cssText = "animation: shake 1s; background-color:" + deck[4].color + ";";
     monitor.appendChild(card5);
 
 
@@ -182,7 +182,7 @@ function createDeck() {
 
 
 
-
+//create card deck in HTML
 
 mixCards.addEventListener("click", showDeck);
 
@@ -195,11 +195,6 @@ function showDeck() {
 }
 
 //create HTML card design
-
-function addCardDeck() {
-  createSnakeCard();
- 
-}
 
 // attach onclick event handler to add button
 //document.getElementById("addCards").addEventListener("click", addCardDeck);
@@ -234,7 +229,7 @@ function createDeckCPU() {
 
     CPUCard.className = "cardBox card4";
     CPUCard.id = "cardCPU4";
-    CPUCard.style.cssText = "animation: shake 1s; background-color:lightgray;";
+    CPUCard.style.cssText = "animation: shake 1s; background-color:l" + deckCPU[0].color + ";";
 
   monitorCPU.appendChild(CPUCard);
 
@@ -429,8 +424,8 @@ document.getElementById('remove').addEventListener('click', removeHobby);
 
 
 
-let attackE = snakeCardAttributes.attack;
-let healthE = snakeCardAttributes.health;
+let attackE;
+let healthE;
 
 let attackP;
 let healthP;
@@ -438,7 +433,14 @@ let healthP;
 function attackAttack() {
 
  
-  compareArray();
+  //compareArray();
+
+  attackE = deckCPU[0].attack;
+  healthE = deckCPU[0].health;
+  attackP = deck[1].attack;
+  healthP = deck[1].health;
+
+ 
   let healthPlayer = healthP - attackE;
   let healthEnemy = healthE - attackP;
 
@@ -449,7 +451,7 @@ function attackAttack() {
       alert("card is dead");
       console.log(deck);
       deck.splice(1, 1, 'Empty');
-      card2.innerHTML = deck[1];
+      card2.innerHTML = deck[1]; //card2 must be replaced
 
       console.log("Health left Player: " + healthPlayer 
       + " Health left CPU: " + healthEnemy)
@@ -475,14 +477,28 @@ function attackAttack() {
     
 }
 
+//card1.addEventListener("click", cardClick);
 
+function cardClick {
+  if card1 {
+    x = 0;
+  }
+  else if card2 {
+    x=2;
+    }
+
+  }
+
+}
 card2.addEventListener("click", attackAttack);
+//card3.addEventListener("click", dummyAttack);
+//card4.addEventListener("click", dummyAttack);
+//card5.addEventListener("click", dummyAttack);
 
 
 
 
-
-
+/*
 function compareArray(){
  
 
@@ -509,13 +525,10 @@ function compareArray(){
   }else{
     console.log("aaaahhhh its an error");
   }
-
-
-
-
-
+*/
 
 /*
+
 
   let b;
   for (b = 0; b < 5; b++) {
@@ -542,4 +555,3 @@ function compareArray(){
   }
 */
 
-}
