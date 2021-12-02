@@ -437,8 +437,10 @@ function attackAttack() {
 
   attackE = deckCPU[0].attack;
   healthE = deckCPU[0].health;
-  attackP = deck[1].attack;
-  healthP = deck[1].health;
+  attackP = deckNumber.attack;
+  healthP = deckNumber.health;
+
+
 
  
   let healthPlayer = healthP - attackE;
@@ -450,8 +452,11 @@ function attackAttack() {
       
       alert("card is dead");
       console.log(deck);
-      deck.splice(1, 1, 'Empty');
-      card2.innerHTML = deck[1]; //card2 must be replaced
+      deckSplice;
+      cardX.innerHTML = deckNumber;
+
+      console.log(deckSplice);
+
 
       console.log("Health left Player: " + healthPlayer 
       + " Health left CPU: " + healthEnemy)
@@ -477,23 +482,56 @@ function attackAttack() {
     
 }
 
-//card1.addEventListener("click", cardClick);
+//click event
+let deckNumber;
+let deckSplice;
+let cardX;
 
-function cardClick {
-  if card1 {
-    x = 0;
-  }
-  else if card2 {
-    x=2;
-    }
+function clickEventCard1() {
+  deckNumber = deck[0];
+  deckSplice = deck.splice(1, 0, 'Empty');
+  cardX = card1;
 
-  }
-
+  attackAttack();
 }
-card2.addEventListener("click", attackAttack);
-//card3.addEventListener("click", dummyAttack);
-//card4.addEventListener("click", dummyAttack);
-//card5.addEventListener("click", dummyAttack);
+
+function clickEventCard2() {
+  deckNumber = deck[1];
+  deckSplice = deck.splice(1, 1, 'Empty');
+  cardX = card2;
+
+  attackAttack();
+}
+
+function clickEventCard3() {
+  deckNumber = deck[2];
+  deckSplice = deck.splice(2, 1, 'Empty');
+  cardX = card3;
+
+  attackAttack();
+}
+
+function clickEventCard4() {
+  deckNumber = deck[3];
+  deckSplice = deck.splice(3, 1, 'Empty');
+  cardX = card4;
+
+  attackAttack();
+}
+
+function clickEventCard5() {
+  deckNumber = deck[4];
+  deckSplice = deck.splice(4, 1, 'Empty');
+  cardX = card5;
+
+  attackAttack();
+}
+
+card1.addEventListener("click", clickEventCard1);
+card2.addEventListener("click", clickEventCard2);
+card3.addEventListener("click", clickEventCard3);
+card4.addEventListener("click", clickEventCard4);
+card5.addEventListener("click", clickEventCard5);
 
 
 
