@@ -452,10 +452,9 @@ function attackAttack() {
       
       alert("card is dead");
       console.log(deck);
-      deckSplice;
-      cardX.innerHTML = deckNumber;
-
-      console.log(deckSplice);
+      deck.splice(numberOne, numberTwo, 'Dead');
+      cardX.innerHTML = deck.splice(numberOne, numberTwo, 'Dead');
+      console.log(deckNumber);
 
 
       console.log("Health left Player: " + healthPlayer 
@@ -484,12 +483,14 @@ function attackAttack() {
 
 //click event
 let deckNumber;
-let deckSplice;
+let numberOne;
+let numberTwo;
 let cardX;
 
 function clickEventCard1() {
   deckNumber = deck[0];
-  deckSplice = deck.splice(1, 0, 'Empty');
+  numberOne = 0;
+  numberTwo = 1;
   cardX = card1;
 
   attackAttack();
@@ -497,7 +498,8 @@ function clickEventCard1() {
 
 function clickEventCard2() {
   deckNumber = deck[1];
-  deckSplice = deck.splice(1, 1, 'Empty');
+  numberOne = 1;
+  numberTwo = 1;
   cardX = card2;
 
   attackAttack();
@@ -505,7 +507,8 @@ function clickEventCard2() {
 
 function clickEventCard3() {
   deckNumber = deck[2];
-  deckSplice = deck.splice(2, 1, 'Empty');
+  numberOne = 2;
+  numberTwo = 1; 
   cardX = card3;
 
   attackAttack();
@@ -513,7 +516,8 @@ function clickEventCard3() {
 
 function clickEventCard4() {
   deckNumber = deck[3];
-  deckSplice = deck.splice(3, 1, 'Empty');
+  numberOne = 3;
+  numberTwo = 1;
   cardX = card4;
 
   attackAttack();
@@ -521,7 +525,8 @@ function clickEventCard4() {
 
 function clickEventCard5() {
   deckNumber = deck[4];
-  deckSplice = deck.splice(4, 1, 'Empty');
+  numberOne = 4;
+  numberTwo = 1;
   cardX = card5;
 
   attackAttack();
