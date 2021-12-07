@@ -146,34 +146,11 @@ function createDeck() {
 
 
 
-  /*
-  let b;
-  for (b = 0; b < 5; b++) {
-    // iterate
-    switch (deck[b]) {
-      case "snake":
-        createSnakeCard();
-        break;
-      case "wolf":
-        createWolfCard();
-        break;
-      case "tiger":
-        createTigerCard();
-        break;
-      case "eagle":
-        createEagleCard();
-        break;
-      case "mouse":
-        createMouseCard();
-        break;
-      default:
-        console.log("Error");
-    }
-  }
+
 
   
 
-*/
+
 }  
 
 
@@ -212,7 +189,11 @@ function showNewCards() {
   mixCards.disabled = false;
   deck = [];
   deckCPU = [];
- 
+
+  healthPlayer = 0;
+  healthEnemy = 0;
+  console.log(healthPlayer);
+  console.log(healthEnemy);
 }
 
 
@@ -282,205 +263,6 @@ function createDeckCPUnew() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function showNewCards(){
-let x = Math.floor(Math.random() * 5);
-  if (x == 0) {
-    console.log(chars[0]);
-    monitor.innerHTML+=chars[0];
-      
-  }
-  else if (x==1){
-    console.log(chars[1]);
-    monitor.innerHTML+=chars[1];
-      
-    }
-
-    else if (x==2){
-      console.log(chars[2]);
-      monitor.innerHTML+=chars[2];
-        
-      }
-
-      else if (x==3){
-        console.log(chars[3]);
-        monitor.innerHTML+=chars[3];
-          
-        }
-
-  else {
-    console.log(chars[4]);
-    monitor.innerHTML+=chars[4];
-  }
-
-
-
-
-}*/
-
-/*
-  var div = document.getElementById('hobby');
-
-function addHobby() {
-  var input = document.createElement('input'),
-    button = document.createElement('button');
-  
-  input.placeholder = "More hobbies";
-  button.innerHTML = 'X';
-  // attach onlick event handler to remove button
-  button.onclick = removeHobby;
-  
-  div.appendChild(input);
-  div.appendChild(button);
-}
-
-function removeHobby() {
-  // remove this button and its input
-  div.removeChild(this.previousElementSibling);
-  div.removeChild(this);
-}
-
-// attach onclick event handler to add button
-document.getElementById('add').addEventListener('click', addHobby);
-// attach onclick event handler to 1st remove button
-document.getElementById('remove').addEventListener('click', removeHobby);
-
-
-
- 
-   
-  }
-
-
-
-
-
-card1.addEventListener("click", showToggle);
-
-function showToggle(){
-  card1.style.cssText = "animation: attack 1s";
-  cardCPU.style.cssText = "animation: shake 1s;"; 
-  
-
-}
-
-
-
-
-
-
-
-
-//Random I Random II, III, IV, V
-
-
-
-var div = document.getElementById('hobby');
-
-function addHobby() {
-  var input = document.createElement('input'),
-    button = document.createElement('button');
-  
-  input.placeholder = "More hobbies";
-  button.innerHTML = 'X';
-  // attach onlick event handler to remove button
-  button.onclick = removeHobby;
-  
-  div.appendChild(input);
-  div.appendChild(button);
-}
-
-function removeHobby() {
-  // remove this button and its input
-  div.removeChild(this.previousElementSibling);
-  div.removeChild(this);
-}
-
-// attach onclick event handler to add button
-document.getElementById('add').addEventListener('click', addHobby);
-// attach onclick event handler to 1st remove button
-document.getElementById('remove').addEventListener('click', removeHobby);
-
-*/
-
-
-
-
-
-let attackE;
-let healthE;
-
-let attackP;
-let healthP;
-
-function attackAttack() {
-
- 
-  //compareArray();
-
-  attackE = deckCPU[0].attack;
-  healthE = deckCPU[0].health;
-  attackP = deckNumber.attack;
-  healthP = deckNumber.health;
-
-
-
- 
-  let healthPlayer = healthP - attackE;
-  let healthEnemy = healthE - attackP;
-
-
-
-    if(healthPlayer <= 0) {
-      
-      alert("card is dead");
-      console.log(deck);
-      deck.splice(numberOne, numberTwo, 'Dead');
-      cardX.innerHTML = deck.splice(numberOne, numberTwo, 'Dead');
-      console.log(deckNumber);
-
-
-      console.log("Health left Player: " + healthPlayer 
-      + " Health left CPU: " + healthEnemy)
-
-    }
-    else if (healthPlayer > 0 & deckCPU.length > 1) {
-      alert("card is still alive")
-      
-      deckCPU.shift();
-      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
-
-
-      console.log("Health left Player: " + healthPlayer 
-      + " Health left CPU: " + healthEnemy);
-
-    }
-
-    else {
-      CPUCard.innerHTML = "no more cards";
-      alert("Player wins");
-      //scorePlayer =+ 1;
-    }
-    
-}
-
 //click event
 let deckNumber;
 let numberOne;
@@ -541,60 +323,95 @@ card5.addEventListener("click", clickEventCard5);
 
 
 
+
+
 /*
-function compareArray(){
+let attackE = 0;
+let healthE;
+
+let attackP;
+let healthP;
+*/
+
+
+
+function attackAttack() {
+
+  deckNumber.health = deckNumber.health - deckCPU[0].attack;
+  let healthEnemy = deckCPU[0].health - deckNumber.attack;
+
+  let healthPlayer = deckNumber.health;
+  //compareArray();
+
+  /*
+  attackP = deckNumber.attack;
+  healthP = deckNumber.health - attackE;
+  attackE = deckCPU[0].attack;
+  healthE = deckCPU[0].health;
+
+console.log(attackE);
  
+  let healthPlayer = healthP - attackE;
+  let healthEnemy = healthE - attackP;
 
-  if (deck[1] == chars[0]){
-    console.log("aaaahhhh its a snake");
-    attackP = snakeCardAttributes.attack;
-    healthP = snakeCardAttributes.health;
-  }else if (deck[1] == chars[1]){
-    console.log("aaaahhhh its a wolf");
-    attackP = wolfCardAttributes.attack;
-    healthP = wolfCardAttributes.health;
-  }else if (deck[1] == chars[2]){
-    console.log("aaaahhhh its a tiger");
-    attackP = tigerCardAttributes.attack;
-    healthP = tigerCardAttributes.health;
-  }else if (deck[1] == chars[3]){
-    console.log("aaaahhhh its an eagle");
-    attackP = eagleCardAttributes.attack;
-    healthP = eagleCardAttributes.health;
-  }else if (deck[1] == chars[4]){
-    console.log("aaaahhhh its a mouse");
-    attackP = mouseCardAttributes.attack;
-    healthP = mouseCardAttributes.health;
-  }else{
-    console.log("aaaahhhh its an error");
-  }
-*/
-
-/*
+  */
 
 
-  let b;
-  for (b = 0; b < 5; b++) {
-    // iterate
-    switch (deck[b]) {
-      case "snake":
-        createSnakeCard();
-        break;
-      case "wolf":
-        createWolfCard();
-        break;
-      case "tiger":
-        createTigerCard();
-        break;
-      case "eagle":
-        createEagleCard();
-        break;
-      case "mouse":
-        createMouseCard();
-        break;
-      default:
-        console.log("Error");
+
+  console.log(healthPlayer);
+
+    if((healthPlayer <= 0) & (healthEnemy > 0) & (deckCPU.length > 1)){
+      
+      console.log("playercard is dead");
+      console.log("enemycard is alive");
+      console.log(deck);
+
+      deck.splice(numberOne, numberTwo, 'Dead');
+      cardX.innerHTML = deck.splice(numberOne, numberTwo, 'Dead');
+    
     }
-  }
-*/
+
+    else if ((healthPlayer > 0) & (healthEnemy <= 0) & (deckCPU.length > 1)){
+      
+      console.log("playercard is alive");
+      console.log("enemycard is dead");
+      
+      deckCPU.shift();
+      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
+      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayer;
+
+    }
+
+    else if ((healthPlayer > 0) & (healthEnemy > 0) & (deckCPU.length > 1)){
+      
+      console.log("playercard is alive");
+      console.log("enemycard is alive");
+
+      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayer;
+      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + healthEnemy;
+      }
+
+    else if ((healthPlayer <= 0) & (healthEnemy <= 0) & (deckCPU.length > 1)){
+      
+      console.log("playercard is dead");
+      console.log("enemycard is dead");
+
+      deckCPU.shift();
+      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
+      deck.splice(numberOne, numberTwo, 'Dead');
+      cardX.innerHTML = deck.splice(numberOne, numberTwo, 'Dead');
+    }
+
+
+    else {
+      CPUCard.innerHTML = "no more cards";
+      alert("Player wins");
+      //scorePlayer =+ 1;
+    }
+
+    console.log("Health left Player: " + healthPlayer 
+    + " Health left CPU: " + healthEnemy)
+    
+}
+
 
