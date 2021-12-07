@@ -147,10 +147,6 @@ function createDeck() {
 
 
 
-
-  
-
-
 }  
 
 
@@ -333,14 +329,14 @@ let attackP;
 let healthP;
 */
 
-
+let scoreP = 0;
 
 function attackAttack() {
 
-  deckNumber.health = deckNumber.health - deckCPU[0].attack;
+  let healthPlayer = deckNumber.health - deckCPU[0].attack;
   let healthEnemy = deckCPU[0].health - deckNumber.attack;
 
-  let healthPlayer = deckNumber.health;
+
   //compareArray();
 
   /*
@@ -357,6 +353,36 @@ console.log(attackE);
   */
 
 
+  //healthEnemy = healthEnemy - deckNumber.attack;
+
+//let counter = 0;
+
+
+      /*
+      if (counter = 0) {
+          healthEnemy = healthEnemy - deckNumber.attack;
+          counter =+ 1;
+      }
+      else if (counter = 1) {
+          healthEnemy = healthEnemy - deckNumber.attack;
+          counter =+ 1;
+      }
+      else {
+          healthEnemy = healthEnemy - deckNumber.attack;
+          counter =+ 1;
+      }*/
+
+
+
+
+
+
+
+
+
+
+
+
 
   console.log(healthPlayer);
 
@@ -368,8 +394,10 @@ console.log(attackE);
 
       deck.splice(numberOne, numberTwo, 'Dead');
       cardX.innerHTML = deck.splice(numberOne, numberTwo, 'Dead');
-    
-    }
+      
+           
+
+  }
 
     else if ((healthPlayer > 0) & (healthEnemy <= 0) & (deckCPU.length > 1)){
       
@@ -379,6 +407,9 @@ console.log(attackE);
       deckCPU.shift();
       CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
       cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayer;
+
+
+   
 
     }
 
@@ -406,8 +437,11 @@ console.log(attackE);
     else {
       CPUCard.innerHTML = "no more cards";
       alert("Player wins");
-      //scorePlayer =+ 1;
+      return ++scoreP;
+      
     }
+
+    scorePlayer.innerHTML = scoreP;
 
     console.log("Health left Player: " + healthPlayer 
     + " Health left CPU: " + healthEnemy)
