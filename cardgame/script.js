@@ -186,10 +186,10 @@ function showNewCards() {
   deck = [];
   deckCPU = [];
 
-  healthPlayer = 0;
-  healthEnemy = 0;
-  console.log(healthPlayer);
-  console.log(healthEnemy);
+  healthPlayerNew = 0;
+  healthEnemyNew = 0;
+  console.log(healthPlayerNew);
+  console.log(healthEnemyNew);
 }
 
 
@@ -265,11 +265,21 @@ let numberOne;
 let numberTwo;
 let cardX;
 
+let healthPlayer;
+let healthEnemy;
+let attackPlayer;
+let attackEnemy;
+
 function clickEventCard1() {
   deckNumber = deck[0];
   numberOne = 0;
   numberTwo = 1;
   cardX = card1;
+
+  healthPlayer = deckNumber.health;
+  healthEnemy = deckCPU[0].health;
+  attackPlayer = deckNumber.attack;
+  attackEnemy = deckCPU[0].attack;
 
   attackAttack();
 }
@@ -280,6 +290,11 @@ function clickEventCard2() {
   numberTwo = 1;
   cardX = card2;
 
+  healthPlayer = deckNumber.health;
+  healthEnemy = deckCPU[0].health;
+  attackPlayer = deckNumber.attack;
+  attackEnemy = deckCPU[0].attack;
+
   attackAttack();
 }
 
@@ -288,6 +303,11 @@ function clickEventCard3() {
   numberOne = 2;
   numberTwo = 1; 
   cardX = card3;
+
+  healthPlayer = deckNumber.health;
+  healthEnemy = deckCPU[0].health;
+  attackPlayer = deckNumber.attack;
+  attackEnemy = deckCPU[0].attack;
 
   attackAttack();
 }
@@ -298,6 +318,11 @@ function clickEventCard4() {
   numberTwo = 1;
   cardX = card4;
 
+  healthPlayer = deckNumber.health;
+  healthEnemy = deckCPU[0].health;
+  attackPlayer = deckNumber.attack;
+  attackEnemy = deckCPU[0].attack;
+
   attackAttack();
 }
 
@@ -306,6 +331,11 @@ function clickEventCard5() {
   numberOne = 4;
   numberTwo = 1;
   cardX = card5;
+
+  healthPlayer = deckNumber.health;
+  healthEnemy = deckCPU[0].health;
+  attackPlayer = deckNumber.attack;
+  attackEnemy = deckCPU[0].attack;
 
   attackAttack();
 }
@@ -321,6 +351,9 @@ card5.addEventListener("click", clickEventCard5);
 
 
 
+let healthPlayerNew;
+let healthEnemyNew;
+
 /*
 let attackE = 0;
 let healthE;
@@ -332,9 +365,11 @@ let healthP;
 let scoreP = 0;
 
 function attackAttack() {
+  healthPlayerNew = healthPlayer;
+  healthEnemyNew = healthEnemy;
 
-  let healthPlayer = deckNumber.health - deckCPU[0].attack;
-  let healthEnemy = deckCPU[0].health - deckNumber.attack;
+  healthPlayerNew = healthPlayerNew - attackEnemy;
+  healthEnemyNew = healthEnemyNew - attackPlayer;
 
 
   //compareArray();
@@ -376,17 +411,9 @@ console.log(attackE);
 
 
 
+  console.log(healthPlayerNew);
 
-
-
-
-
-
-
-
-  console.log(healthPlayer);
-
-    if((healthPlayer <= 0) & (healthEnemy > 0) & (deckCPU.length > 1)){
+    if((healthPlayerNew <= 0) & (healthEnemyNew > 0) & (deckCPU.length > 1)){
       
       console.log("playercard is dead");
       console.log("enemycard is alive");
@@ -399,30 +426,30 @@ console.log(attackE);
 
   }
 
-    else if ((healthPlayer > 0) & (healthEnemy <= 0) & (deckCPU.length > 1)){
+    else if ((healthPlayerNew > 0) & (healthEnemyNew <= 0) & (deckCPU.length > 1)){
       
       console.log("playercard is alive");
       console.log("enemycard is dead");
       
       deckCPU.shift();
       CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + deckCPU[0].health;
-      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayer;
+      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayerNew;
 
 
    
 
     }
 
-    else if ((healthPlayer > 0) & (healthEnemy > 0) & (deckCPU.length > 1)){
+    else if ((healthPlayerNew > 0) & (healthEnemyNew > 0) & (deckCPU.length > 1)){
       
       console.log("playercard is alive");
       console.log("enemycard is alive");
 
-      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayer;
-      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + healthEnemy;
+      cardX.innerHTML = deckNumber.name + "<br><br>attack: " + deckNumber.attack + "<br>health: " + healthPlayerNew;
+      CPUCard.innerHTML = deckCPU[0].name + "<br><br>attack: " + deckCPU[0].attack + "<br>health: " + healthEnemyNew;
       }
 
-    else if ((healthPlayer <= 0) & (healthEnemy <= 0) & (deckCPU.length > 1)){
+    else if ((healthPlayerNew <= 0) & (healthEnemyNew <= 0) & (deckCPU.length > 1)){
       
       console.log("playercard is dead");
       console.log("enemycard is dead");
@@ -443,8 +470,8 @@ console.log(attackE);
 
     scorePlayer.innerHTML = scoreP;
 
-    console.log("Health left Player: " + healthPlayer 
-    + " Health left CPU: " + healthEnemy)
+    console.log("Health left Player: " + healthPlayerNew 
+    + " Health left CPU: " + healthEnemyNew)
     
 }
 
