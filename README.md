@@ -13,7 +13,7 @@ https://codepec.github.io/theodinproject/landingPage/index.html
 |
 |
 4. Project: Etch-a-Sketch 
-|
+https://codepec.github.io/theodinproject/etch-a-sketch/index.html
 |
 5. Project: Calculator
 |
