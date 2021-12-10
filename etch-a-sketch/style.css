@@ -24,34 +24,35 @@ body {
   padding: 0;
   height: 100%;
   font-family: 'Amatic SC', cursive;
-}
-
-
-
-body {
-
-
   background-color: lightslategray;
- 
 }
+
 
 img {
-
   opacity: 0.4;
+}
+
+.grid-container {
+  display: grid;
+  
+
 }
 
 #wrapper {
   min-height: 100%;
   position: relative;
 }
+
 .header {
   background: #752a09;
   padding: 10px;
 }
-.body {
+
+body {
   padding: 10px;
   padding-bottom: 60px; /* Height of the footer */
 }
+
 .footer {
   position: relative;
   bottom: 0;
@@ -60,37 +61,32 @@ img {
   text-align: center;
 }
 
-.newGameButton,
-.creditsButton,
-.helpButton {
+#createSquareButton  {
   padding: 5px;
-  width: 100px;
+  width: 150px;
   margin: 1px;
-}
+  }
 
 .squareBox {
 
   border-radius: 10px;
   background-color: lightgray;
-  margin: 2px;
   cursor: pointer;
-  box-shadow: inset 0px 0px 5px 5px black;
-  padding:10px;
+  margin:5px;
+  padding:15px;
+  height: 40px;
+  width: 15%;
+  display:inline-block;
+  border: 2px solid black;
 
 }
 
 .squareBox:hover {
-  box-shadow: inset 0px 0px 5px 5px black;
-  transform: translate(0px, -10px);
-  background-color: #b7410e;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 50px black;
   
 }
 
-.squareBox.CPU:hover {
-  box-shadow: inset 0px 0px 5px 5px black;
-  transform: rotate(90deg);
-  background-color: gray;
-}
 
 .container {
   display: flex;
@@ -100,6 +96,7 @@ img {
   font-family: 'Gruppo', cursive;
   font-weight: bold;
   font-size: 20px;
+  padding: 50px;
 }
 
 h1 {
@@ -114,86 +111,16 @@ h1 {
   /*box-shadow: 0px 5px 5px 0px ;*/
 }
 
-@keyframes shake {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  50% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  55% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  65% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  75% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  80% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  85% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  90% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  95% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  98% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-@keyframes attack {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  50% {
-    transform: translate(200px, -200px) rotate(0deg);
-  }
-  100% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-}
-
-/*CPU deck*/
-
-.monitorCPU {
-  width: 80%;
-  height: 150px;
-  background-color: #5e2207;
-  box-shadow: inset 0px 0px 50px #1e0b02;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
 
 
-/*userdeck*/
 
 .monitor {
-  width: 80%;
-  height: 500px;
+  
+  
   background-color: #5e230775;
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+ 
 
  
 }
