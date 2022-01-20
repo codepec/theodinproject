@@ -15,27 +15,46 @@ function createSquareField() {
 
   for (let i = 0; i < 16; i++) {
     
-    createSquare();
+    monitor.appendChild(createSquare("square" + i));
 
   }
- 
+
+  
 }
 
 
 
 
 
-function createSquare() {
+function createSquare(idSquare) {
 
   const square = document.createElement("div");
 
   square.innerHTML = "";
-    square.className = "squareBox square";
-    square.id = "square";
+    square.className = "squareBox";
+    square.id = idSquare;
     //square.style.cssText = "animation: shake 1s; background-color:l" + yellow + ";";
 
-  monitor.appendChild(square);
+    
+
+  
+  
+  
+
+  return square;
 
 }
 
+
+
 createSquareButton.addEventListener("click", createSquareField);
+
+
+//square color
+function colorSquare(){
+  squareBox.style.cssText = "background-color:yellow;";
+
+}
+
+
+
