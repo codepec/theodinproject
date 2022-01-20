@@ -10,7 +10,7 @@ https://codepec.github.io/theodinproject/odin-recipes/index.html
 https://codepec.github.io/theodinproject/landingPage/index.html
 |
 3. Project: Rock Paper Scissors
-|
+https://codepec.github.io/theodinproject/rockpaperscissors/index.html
 |
 4. Project: Etch-a-Sketch 
 https://codepec.github.io/theodinproject/etch-a-sketch/index.html
