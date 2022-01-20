@@ -1,0 +1,203 @@
+html {
+    background-color: rgb(71, 71, 71);
+    font-family: Arial, Verdana;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+  
+    color:#a5a5a5;
+
+    
+    background: #a5a5a5;
+    background: -webkit-linear-gradient(to right, #7e7e7e 0%, #a5a5a5 10%, #ffffff 40%, #ffffff 60%, #b1b1b1 70%, #919191 100%);
+    background: -moz-linear-gradient(to right, #7e7e7e 0%, #a5a5a5 10%, #ffffff 40%, #ffffff 60%, #b1b1b1 70%, #919191 100%);
+    background: linear-gradient(to right, #7e7e7e 0%, #a5a5a5 10%, #ffffff 40%, #ffffff 60%, #b1b1b1 70%, #919191 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    text-align: center;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color:rgb(202, 202, 202);
+}
+
+.buttonGold{
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin: 5px;
+    box-shadow: 2px 2px 4px 1px;
+    cursor: pointer;
+    background:linear-gradient(to bottom, rgb(255, 242, 172) 0%,rgb(158, 158, 158) 100%);
+    color:black;
+    
+}
+
+.buttonGold:hover{
+    background:linear-gradient(to bottom, rgb(255, 251, 226) 0%,rgb(255, 230, 88) 100%);
+}
+
+.monitor {
+    width: 400px;
+    height: 50px;
+    padding:30px;
+    border-radius: 15px;
+    background-color: rgb(202, 202, 202);
+    border: 1px solid;
+    font-size: 20px;
+    cursor:pointer;
+}
+
+
+
+.monitorSmall {
+    border-radius: 15px;
+
+    font-size: 30px;
+    background: linear-gradient(#adbbb375, #cfdfd7c5);
+}
+
+.monitorText {
+ 
+    border-radius: 15px;
+    font-size: 15px;
+
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+td{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+button {
+   
+    background: gray;
+   
+    border-radius: 5px;
+    border: 1px solid;
+    cursor: pointer;
+    
+}
+
+.bigButton {
+   
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 5px;
+    box-shadow: 2px 2px 4px 1px;
+    cursor: pointer;
+    background:linear-gradient(to bottom, rgb(230, 230, 230) 5%, #086499 100%);
+    color:black;
+    
+}
+
+.bigButton:active {
+   
+    color:black;
+    
+}
+
+
+
+button:hover {
+    box-shadow: 0px 0px 5px 0px;
+
+}
+
+
+#rockbutton:hover{
+
+    background: linear-gradient(#f3f3f3, #616161);
+    
+    
+}
+
+#paperbutton:hover{
+
+    background: linear-gradient(#ffffff, #e7e7e7);
+}
+
+#scissorsbutton:hover{
+    
+    background: linear-gradient(#a8a8a8, #a8a8a8);
+}
+
+#randombutton:hover{
+
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+
+
+}
+
+
+
+
+
+.middle {
+    margin-top: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.box {
+  
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    
+    padding:30px;
+    border-radius: 15px;
+    border: 1px solid;
+
+    background-color: rgb(202, 202, 202);
+
+}
+
+
+footer{
+    
+    margin-top: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: rgba(4,9,30,0.8);
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.buttonGray {
+    background: gray;
+    padding: 16px;
+    border-radius: 15px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.buttonGray:hover {
+    background-color: rgb(202, 202, 202);
+}
+
