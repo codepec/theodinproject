@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* NavBar - Begin */
+header {
+  min-height: 10vh;
+  width: 100%;
+}
+
+nav {
+  max-width: 900px;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+}
+
+.right {
+  text-decoration: none;
+  font-size: 18px;
+  color: #e5e7eb;
+  font-size: 15px;
+  float: right;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.left {
+  float: left;
+  font-size: 24px;
+  color: #f9faf8;
+}
+
+.left a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* NavBar - End */
+
+.firstContent {
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.firstContent h1 {
+  font-weight: extra-bold;
+  font-size: 48px;
+  color: #f9faf8;
+}
+
+.firstContent p {
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+
+  max-width: 800px;
+  margin: auto;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item2-gray {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  background-color: gray;
+  text-align: center;
+}
+
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  text-align: center;
+}
+
+.buttonSignUp {
+  all: unset;
+  background-color: #3882f6;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.buttonSignIn {
+  all: unset;
+  background-color: #3882f6;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hero,
+.firstContent {
+  background-color: #1f2937;
+}
+
+footer {
+  background-color: #1f2937;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f9faf8;
+  padding: 15px;
+}
+
+.heroMainText {
+  font-weight: extra-bold;
+  font-size: 48px;
+  color: #f9faf8;
+}
+
+.heroSecondaryText,
+.headerLinkText {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.headerLogoText {
+  font-size: 24px;
+  color: #f9faf8;
+}
+
+.buttonColor {
+  background-color: #3882f6;
+  color: white;
+}
+
+.callToActionBackground {
+  background-color: #3882f6;
+  color: white;
+}
+
+h2 {
+  /*informationHeaderText */
+  font-size: 36px;
+  font-weight: extra-bold;
+  color: #1f2937;
+}
+
+.secondContent {
+  text-align: center;
+  justify-content: center;
+  padding: 5%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.boxContainerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.box {
+  border-radius: 15px;
+  border: 3px solid #3882f6;
+  padding: 50px;
+  margin: 15px;
+}
+
+.thirdContent {
+  background-color: #e5e7eb; /*quoteSectionBackgroundColor*/
+  font-size: 36px; /*quoteText*/
+  font-weight: light italic;
+  color: #1f2937;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+.containerQuote,
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.quoteRight {
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.fourthContent {
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.containerCalltoAction {
+  background-color: #3882f6;
+  color: white;
+  padding: 5%;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: auto;
+}
