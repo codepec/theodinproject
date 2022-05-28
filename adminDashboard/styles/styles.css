@@ -1,0 +1,254 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+
+.grid-container {
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 32px;
+    
+  }
+  
+  .card {
+    background-color: white;
+    border-left: 10px solid lightblue;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px black;
+    
+  }
+
+  .card:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 8px 0px black;
+    border-color: #334155;
+    transition: 1s;
+  }
+
+
+
+  #headerContent {
+    display: grid;
+    width: 100%;
+    
+    grid-template: [search-left] "search search search loginPerson" 80px [search-right]
+                   [loginPerson-left] "welcomePerson welcomePerson welcomePerson buttonsHeader" 150px  [buttonsHeader-right]
+    ;
+                  }
+
+.search{
+  
+  background-color: white;
+  grid-area: search;
+  display:flex;
+  align-items: center;
+  font-size: 25px;
+  padding:25px;
+}
+
+input{
+  border-style: none;
+  background-color: lightgray;
+  border-radius: 20px;
+  width: 400px;
+}
+
+.loginPerson{
+  background-color: white;
+  grid-area: loginPerson;
+  display:flex;
+  align-items: center;
+  justify-content: right;
+  font-size: 20px;
+  font-weight: 700;
+  padding:25px;
+  cursor: pointer;
+  
+}
+
+.welcomePerson{
+  background-color: white;
+  grid-area: welcomePerson;
+  display:flex;
+  align-items: center;
+  padding:25px;
+}
+
+.buttonsHeader{
+  display:flex;
+
+  background-color: white;
+  grid-area: buttonsHeader;
+  align-items: center;
+  justify-content: right;
+  padding:25px;
+}
+
+.buttonHead{
+  padding:10px;
+  width: 75px;
+  margin:5px;
+  color:white;
+  background-color: #334155;
+  border:solid 1px black;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.buttonHead:hover{
+  color:lightslategray;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+  #page {
+    display: grid;
+    width: 100%;
+    min-height: 500px;
+    grid-template: [header-left] "nav head" auto [header-right]
+                   [main-left]   "nav  main" 1fr  [main-right]
+                   [footer-left] "nav  foot" 2rem [footer-right]
+                   / 15rem 1fr;
+  }
+  
+  header {
+    display:flex;
+    background-color: white;
+    grid-area: head;
+    
+  }
+ 
+  nav {
+    background-color: lightslategray;
+    grid-area: nav;
+    color:white;
+  }
+
+  .logoDashboardNav{
+    padding:20px;
+    font-size: 25px;
+  }
+
+  .buttonNav{
+    padding: 15px;
+    margin-left:20px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .buttonNav:hover{
+    background-color: lightsteelblue;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  main {
+    background-color: lightsteelblue;
+    grid-area: main;
+    box-shadow: inset 0px 2px 2px 0px gray;
+  }
+  
+  footer {
+    background-color: lightblue;
+    grid-area: foot;
+    font-size: small;
+  }
+
+  img{
+    font-size: small;
+  }
+
+  #mainContent {
+    display: grid;
+    width: 100%;
+    grid-template: [announcements-left]   "yourProjects  announcements" auto  [announcements-right]
+                   [trending-left] "yourProjects  trending" auto [trending-right]
+                   
+  }
+  
+  .yourProjects {
+    grid-area: yourProjects;
+    margin:10px;
+  }
+  
+  .announcements {
+    grid-area: announcements;
+    margin:10px;
+    max-width: 300px;
+  }
+
+  .announcementsChild {
+    padding:1rem;
+    background-color: lightslategray;
+    border-radius: 8px;
+    color:white;
+    box-shadow: 0px 1px 4px 0px black;
+  }
+  
+  .trending {   
+    grid-area: trending;
+    margin:10px;
+    max-width: 300px;
+  }
+
+  .trendingChild {
+    padding:1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px black;
+  }
+
+  .icon{
+    display:flex;
+    align-items: center;
+  }
+
+  .profile{
+    display:block;
+    padding: 15px;
+  }
+
+  .profileProject{
+    color:gray;
+  }
+
+  .button{
+    padding:40px;
+    margin:5px;
+    color:white;
+    background-color: lightslategray;
+    border:solid 1px black;
+    border-radius: 15px;
+  }
+
+  .button:hover{
+    color:lightslategray;
+    background-color: white;
+    cursor: pointer;
+  }
+
+.rightSide{
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+}
+
+span{
+  padding:5px;
+}
+
+.point{
+  border-bottom: solid 1px lightgray;
+
+}
