@@ -21,5 +21,10 @@ https://codepec.github.io/theodinproject/etch-a-sketch/index.html
 6. Project: sign up form
 https://codepec.github.io/theodinproject/signUpForm/index.html
 |
+7. Project: Admin Dashboard
+https://codepec.github.io/theodinproject/adminDashboard/index.html
+|
+|
+|
 X. myOwnProject: CardGame
 https://codepec.github.io/theodinproject/cardgame/index.html
