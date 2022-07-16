@@ -12,7 +12,6 @@
 
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script type="text/javascript" src="script.js" defer></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -28,30 +27,39 @@
 
         <h1>Etch-a-Sketch</h1>
 
-        <button id="createSquareButton">create squares</button>
-        
+        <label>Number of squares: </label>
+        <input type="text" id="number" placeholder="number between 1 and 15">
+        <button type="button" id="send">Create squares</button>
+        <button id="quicklinkBlock1">5 x 5</button>
+        <button id="quicklinkBlock2">10 x 10</button>
+        <button id="quicklinkBlock3">15 x 15</button>
+
+
         <div class="hero-image">
-    
-       
+          	<div class="container"> <!-- flex-container -->
+              <div grid-container> 
+                <div class="monitor" id="monitor">
+                <!-- <div class="squareBox" id="square">  </div> -->
+                </div>
+              </div>
+            </div>
+        </div>
 
-        <div class="container">
-
-          <div grid-container>
-          
-          <div class="monitor" id="monitor">
-
-            <div class="squareBox" id="square">  </div>
-
+        <div class="hero-block">
+          <div class="container-block">
+            <button class="circle" id="blueButton"></button>
+            <button class="circle" id="blackButton"></button>   
+            <button class="circle" id="greenButton"></button>   
+            <button class="circle" id="redButton"></button>              
           </div>
-
-        
+          <div class="container-block">
+            <button class="circle" id="rainbowButton">rainbow</button>
+            <button id="clearButton">clear</button>     
+            <button id="holdButton">hold</button>  
+            <button id="printButton">screenshot</button>  
+          </div>
+          
         </div>
-
-        </div>
-
-        
-      </div>
-      
       <div class="footer">
         <footer>
           created with <i class="fa fa-heart" aria-hidden="true"></i> by CodePec
@@ -59,5 +67,9 @@
       </div>
 
     </div>
+
+    <script src="script.js"></script>
+    <script src="html2canvas.js"></script>
+
   </body>
 </html>

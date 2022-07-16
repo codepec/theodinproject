@@ -35,7 +35,6 @@ img {
 .grid-container {
   display: grid;
   
-
 }
 
 #wrapper {
@@ -67,23 +66,32 @@ body {
   margin: 1px;
   }
 
+
+
+  
+
+
+  /*flex-item*/
 .squareBox {
 
-  border-radius: 10px;
+ /* border-radius: 10px;
   background-color: lightgray;
   cursor: pointer;
-  margin:5px;
   padding:15px;
-  height: 40px;
-  width: 15%;
   display:inline-block;
-  border: 2px solid black;
-
+  border: 2px solid black;*/
+ 
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding:16px 16px;
+  border: 1px solid black;
+  background-color: lightgray;
+  /*border-radius: 10px;*/
 }
 
 .squareBox:hover {
   background-color: transparent;
-  box-shadow: inset 0px 0px 50px black;
+  box-shadow: inset 0px 0px 20px black;
   
 }
 
@@ -99,6 +107,7 @@ body {
   padding: 50px;
 }
 
+
 h1 {
   text-align: center;
   font-size: 50px;
@@ -112,11 +121,15 @@ h1 {
 }
 
 
-
+/*flex-container*/
 
 .monitor {
   
   
+  display: grid;
+  /* grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto; */
+  flex-wrap: wrap; /* Standardwert = nowrap */
   background-color: #5e230775;
   box-shadow: inset 0px 0px 50px #1e0b02;
   border-radius: 15px;
@@ -159,3 +172,59 @@ h1 {
   
 }
 
+.hero-block {
+  display:flex;
+  background-color: #cccccc;
+
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+
+.container-block {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  font-family: 'Gruppo', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+}
+
+
+#blueButton{
+  background-color:blue;
+  
+}
+
+#blackButton{
+  background-color:black;
+  
+}
+
+#greenButton{
+  background-color:limegreen;
+}
+
+#redButton{
+  background-color:crimson;
+}
+
+
+.circle{
+  margin:5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+
+}
+
+.circle:hover{
+  box-shadow: inset 0px 0px 5px 0px black;
+  cursor:pointer;
+}
