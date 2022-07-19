@@ -72,7 +72,7 @@ window.onload = function () {
     const input = document.getElementById("number").value;
 
     if (isNaN(input) || input < 1 || input > 15) {
-      alert("The input must be a number between 1 and 100");
+      alert("The input must be a number between 1 and 15");
     } else {
       num = input;
       createSquareField(num);
