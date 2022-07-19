@@ -1,204 +1,177 @@
 //set DOM Javascript to HTML
 
 window.onload = function () {
+  // buttons HTML
+  const blueButton = document.getElementById("blueButton");
+  const blackButton = document.getElementById("blackButton");
+  const greenButton = document.getElementById("greenButton");
+  const redButton = document.getElementById("redButton");
+  const rainbowButton = document.getElementById("rainbowButton");
+  const clearButton = document.getElementById("clearButton");
+  const holdButton = document.getElementById("holdButton");
+  const printButton = document.getElementById("printButton");
 
+  // variables
+  let rainbow = false;
 
-// buttons HTML
-const blueButton = document.getElementById("blueButton");
-const blackButton = document.getElementById("blackButton");
-const greenButton = document.getElementById("greenButton");
-const redButton = document.getElementById("redButton");
-const rainbowButton = document.getElementById("rainbowButton");
-const clearButton = document.getElementById("clearButton");
-const holdButton = document.getElementById("holdButton");
-const printButton = document.getElementById("printButton");
+  // draw automatically or manually
 
+  let changeMouse = "mouseover";
 
-// variables
-let rainbow = false;
+  // hold button print manual
+  holdButton.addEventListener("click", () => {
+    if (changeMouse == "mouseover") {
+      changeMouse = "mousedown";
+      holdButton.innerText = "auto";
+    } else {
+      changeMouse = "mouseover";
+      holdButton.innerText = "hold";
+    }
 
-// draw automatically or manually
+    clearFunction();
+    createSquareField(10);
+  });
 
-let changeMouse = "mouseover";
+  function createSquareField(num) {
+    let monitor = document.querySelector(".monitor"); //monitor
 
+    let sum = num * num;
 
-// hold button print manual
-holdButton.addEventListener("click", () => {
+    monitor.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+    monitor.style.gridTemplateRows = `repeat(${num}, 1fr)`;
 
-  if (changeMouse == "mouseover"){
-    changeMouse = "mousedown";
-    holdButton.innerText = "auto";
-  }else{
-    changeMouse = "mouseover";
-    holdButton.innerText = "hold";
-  }
-
-  clearFunction();
-  createSquareField(10);
-
-});
-
-
-function createSquareField(num) {
-  
-  let monitor = document.querySelector(".monitor"); //monitor
-
-  let sum = num * num;
-
-  monitor.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
-  monitor.style.gridTemplateRows = `repeat(${num}, 1fr)`;
-
-  //monitor.innerHTML = "";
-
-  for (let i = 0; i < sum; i++) {
-
-    //div.forEach((div) => {
-
-      let squareJS = document.createElement("div"); 
+    for (let i = 0; i < sum; i++) {
+      let squareJS = document.createElement("div");
       squareJS.setAttribute("class", "squareBox");
       squareJS.addEventListener(changeMouse, () => {
         squareJS.style.backgroundColor = changeColor;
         changeEachTime();
-    
-    
       });
-    
-    //});
 
+      monitor.appendChild(squareJS);
+    }
+  }
 
+  createSquareField(10);
 
-  monitor.appendChild(squareJS);//+ i
-  //monitor.appendChild(createSquare());//+ i
-  }   
-
-};
-
-createSquareField(10);
-
-clearButton.addEventListener('click', () => {
+  clearButton.addEventListener("click", () => {
     clearFunction();
     createSquareField(10);
-});
+  });
 
-function clearFunction() {
+  function clearFunction() {
     let allSquares = document.querySelectorAll(".squareBox");
-    allSquares.forEach(squareJS => squareJS.parentNode.removeChild(squareJS));
-  };
-
-const send = document.getElementById("send");
-
-send.addEventListener('click', () => {
-
-
-  clearFunction();
-
-  const input = document.getElementById("number").value;
-
-  if (isNaN(input) || input < 1 || input > 15) {
-    alert("The input must be a number between 1 and 100");
-  }else{
-    num = input;
-   createSquareField(num);
+    allSquares.forEach((squareJS) => squareJS.parentNode.removeChild(squareJS));
   }
-});
 
-//let children = monitor.square;  
+  const send = document.getElementById("send");
 
-// change color by clicking buttons
-let changeColor = "black";
+  send.addEventListener("click", () => {
+    clearFunction();
 
-blueButton.addEventListener("click", () => {
-  rainbow = false;
-  changeColor = "blue";
-});
+    const input = document.getElementById("number").value;
 
-blackButton.addEventListener("click", () => {
-  rainbow = false;
-  changeColor = "black";
-});
+    if (isNaN(input) || input < 1 || input > 15) {
+      alert("The input must be a number between 1 and 100");
+    } else {
+      num = input;
+      createSquareField(num);
+    }
+  });
 
-greenButton.addEventListener("click", () => {
-  rainbow = false;
-  changeColor = "limegreen";
-});
+  //let children = monitor.square;
 
-redButton.addEventListener("click", () => {
-  rainbow = false;
-  changeColor = "crimson";
-});
+  // change color by clicking buttons
+  let changeColor = "black";
 
-rainbowButton.addEventListener("click", () => {
-  
-  
+  blueButton.addEventListener("click", () => {
+    rainbow = false;
+    changeColor = "blue";
+  });
+
+  blackButton.addEventListener("click", () => {
+    rainbow = false;
+    changeColor = "black";
+  });
+
+  greenButton.addEventListener("click", () => {
+    rainbow = false;
+    changeColor = "limegreen";
+  });
+
+  redButton.addEventListener("click", () => {
+    rainbow = false;
+    changeColor = "crimson";
+  });
+
+  rainbowButton.addEventListener("click", () => {
     rainbow = true;
     let redRandomColor = Math.floor(Math.random() * 256);
     let greenRandomColor = Math.floor(Math.random() * 256);
     let blueRandomColor = Math.floor(Math.random() * 256);
-    changeColor = "rgb(" + redRandomColor + "," + greenRandomColor + "," + blueRandomColor +")";
+    changeColor =
+      "rgb(" +
+      redRandomColor +
+      "," +
+      greenRandomColor +
+      "," +
+      blueRandomColor +
+      ")";
+  });
 
-
-  
-});
-
-
-function changeEachTime() {
-
-  if (rainbow == true) {
-    let redRandomColor = Math.floor(Math.random() * 256);
-    let greenRandomColor = Math.floor(Math.random() * 256);
-    let blueRandomColor = Math.floor(Math.random() * 256);
-    changeColor = "rgb(" + redRandomColor + "," + greenRandomColor + "," + blueRandomColor +")";
-  } else {
-    // do nothing...
+  function changeEachTime() {
+    if (rainbow == true) {
+      let redRandomColor = Math.floor(Math.random() * 256);
+      let greenRandomColor = Math.floor(Math.random() * 256);
+      let blueRandomColor = Math.floor(Math.random() * 256);
+      changeColor =
+        "rgb(" +
+        redRandomColor +
+        "," +
+        greenRandomColor +
+        "," +
+        blueRandomColor +
+        ")";
+    } else {
+      // do nothing...
+    }
   }
-  
-};
 
+  // create square
 
-// create square
+  function createSquare() {
+    let squareJS = document.createElement("div");
 
-function createSquare() {
-  let squareJS = document.createElement("div"); 
-    
-  // mousedown
+    // mousedown
     squareJS.addEventListener(changeMouse, () => {
-      
-        squareJS.style.backgroundColor = changeColor;
-      
-      });
+      squareJS.style.backgroundColor = changeColor;
+    });
 
     squareJS.className = "squareBox";
     //squareJS.id = "square";
     monitor.insertAdjacentElement("beforeend", squareJS);
-    
- return squareJS;
-};
 
-//create blocks fast
+    return squareJS;
+  }
 
-quicklinkBlock1.addEventListener("click", () => {
-  clearFunction();
-  num = 5;
-  createSquareField(5);
-});
+  //create blocks fast
 
-quicklinkBlock2.addEventListener("click", () => {
-  clearFunction();
-  num = 10;
-  createSquareField(10);
-});
+  quicklinkBlock1.addEventListener("click", () => {
+    clearFunction();
+    createSquareField(5);
+  });
 
-quicklinkBlock3.addEventListener("click", () => {
-  clearFunction();
-  num = 15;
-  createSquareField(15);
-});
+  quicklinkBlock2.addEventListener("click", () => {
+    clearFunction();
+    createSquareField(10);
+  });
 
+  quicklinkBlock3.addEventListener("click", () => {
+    clearFunction();
+    createSquareField(15);
+  });
 
-
-
-
-/*
+  /*
 
 //promise example
 
@@ -221,19 +194,15 @@ getSomething().then(data => {
 
 */
 
+  // create screenshot
 
-
-// create screenshot
-
-printButton.addEventListener("click", () => {
-  // screenshot example 
+  printButton.addEventListener("click", () => {
+    // screenshot example
     html2canvas(document.body).then((canvas) => {
       let a = document.createElement("a");
       a.download = "screenshot.png";
       a.href = canvas.toDataURL("image/png");
       a.click();
-});
-});
-
-
+    });
+  });
 };
