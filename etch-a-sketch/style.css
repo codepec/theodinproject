@@ -215,6 +215,12 @@ h1 {
 }
 
 
+#rainbowButton{
+  
+    background-image: linear-gradient(to left, purple, indigo, blue, limegreen, yellow, orange, red);
+  
+}
+
 .circle{
   margin:5px;
   width: 50px;
@@ -225,6 +231,20 @@ h1 {
 }
 
 .circle:hover{
+  box-shadow: inset 0px 0px 5px 0px black;
+  cursor:pointer;
+}
+
+.block{
+  margin:5px;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  border: 1px solid black;
+
+}
+
+.block:hover{
   box-shadow: inset 0px 0px 5px 0px black;
   cursor:pointer;
 }

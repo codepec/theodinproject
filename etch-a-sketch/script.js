@@ -1,178 +1,239 @@
 //set DOM Javascript to HTML
 
 window.onload = function () {
-  const monitor = document.querySelector(".monitor");
-  const box = document.querySelector(".box");
-  //const newGameButton = document.querySelector(".newGameButton");
-  const squareJS = document.getElementById("square");
-  const squareBox = document.querySelector(".squareBox");
 
-  // buttons HTML
-  const createSquaresB = document.getElementById("createSquareButton");
-  const blueButton = document.getElementById("blueButton");
-  const blackButton = document.getElementById("blackButton");
-  const greenButton = document.getElementById("greenButton");
-  const redButton = document.getElementById("redButton");
-  const rainbowButton = document.getElementById("rainbowButton");
-  const clearButton = document.getElementById("clearButton");
-  const holdButton = document.getElementById("holdButton");
-  const printButton = document.getElementById("printButton");
-  const oneHundretBlocks = document.getElementById("oneHundretBlocks");
-  const twoHundretBlocks = document.getElementById("twoHundretBlocks");
-  const threeHundretBlocks = document.getElementById("threeHundretBlocks");
 
-  clearButton.addEventListener("click", () => {
-    monitor.innerHTML = "";
-  });
+// buttons HTML
+const blueButton = document.getElementById("blueButton");
+const blackButton = document.getElementById("blackButton");
+const greenButton = document.getElementById("greenButton");
+const redButton = document.getElementById("redButton");
+const rainbowButton = document.getElementById("rainbowButton");
+const clearButton = document.getElementById("clearButton");
+const holdButton = document.getElementById("holdButton");
+const printButton = document.getElementById("printButton");
 
-  let num = 2;
 
-  function createSquareField() {
-    let sum = num * num;
+// variables
+let rainbow = false;
 
-    monitor.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
-    monitor.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+// draw automatically or manually
 
-    monitor.innerHTML = "";
+let changeMouse = "mouseover";
 
-    for (let i = 0; i < sum; i++) {
-      monitor.appendChild(createSquares()); //+ i
-    }
+
+// hold button print manual
+holdButton.addEventListener("click", () => {
+
+  if (changeMouse == "mouseover"){
+    changeMouse = "mousedown";
+    holdButton.innerText = "auto";
+  }else{
+    changeMouse = "mouseover";
+    holdButton.innerText = "hold";
   }
 
-  const send = document.getElementById("send");
+  clearFunction();
+  createSquareField(10);
 
-  send.addEventListener("click", () => {
-    const input = document.getElementById("number").value;
+});
 
-    if (isNaN(input) || input < 1 || input > 15) {
-      alert("The input must be a number between 1 and 100");
-    } else {
-      num = input;
-      createSquareField(num);
-    }
+
+function createSquareField(num) {
+  
+  let monitor = document.querySelector(".monitor"); //monitor
+
+  let sum = num * num;
+
+  monitor.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+  monitor.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+
+  //monitor.innerHTML = "";
+
+  for (let i = 0; i < sum; i++) {
+
+    //div.forEach((div) => {
+
+      let squareJS = document.createElement("div"); 
+      squareJS.setAttribute("class", "squareBox");
+      squareJS.addEventListener(changeMouse, () => {
+        squareJS.style.backgroundColor = changeColor;
+        changeEachTime();
+    
+    
+      });
+    
+    //});
+
+
+
+  monitor.appendChild(squareJS);//+ i
+  //monitor.appendChild(createSquare());//+ i
+  }   
+
+};
+
+createSquareField(10);
+
+clearButton.addEventListener('click', () => {
+    clearFunction();
+    createSquareField(10);
+});
+
+function clearFunction() {
+    let allSquares = document.querySelectorAll(".squareBox");
+    allSquares.forEach(squareJS => squareJS.parentNode.removeChild(squareJS));
+  };
+
+const send = document.getElementById("send");
+
+send.addEventListener('click', () => {
+
+
+  clearFunction();
+
+  const input = document.getElementById("number").value;
+
+  if (isNaN(input) || input < 1 || input > 15) {
+    alert("The input must be a number between 1 and 100");
+  }else{
+    num = input;
+   createSquareField(num);
+  }
+});
+
+//let children = monitor.square;  
+
+// change color by clicking buttons
+let changeColor = "black";
+
+blueButton.addEventListener("click", () => {
+  rainbow = false;
+  changeColor = "blue";
+});
+
+blackButton.addEventListener("click", () => {
+  rainbow = false;
+  changeColor = "black";
+});
+
+greenButton.addEventListener("click", () => {
+  rainbow = false;
+  changeColor = "limegreen";
+});
+
+redButton.addEventListener("click", () => {
+  rainbow = false;
+  changeColor = "crimson";
+});
+
+rainbowButton.addEventListener("click", () => {
+  
+  
+    rainbow = true;
+    let redRandomColor = Math.floor(Math.random() * 256);
+    let greenRandomColor = Math.floor(Math.random() * 256);
+    let blueRandomColor = Math.floor(Math.random() * 256);
+    changeColor = "rgb(" + redRandomColor + "," + greenRandomColor + "," + blueRandomColor +")";
+
+
+  
+});
+
+
+function changeEachTime() {
+
+  if (rainbow == true) {
+    let redRandomColor = Math.floor(Math.random() * 256);
+    let greenRandomColor = Math.floor(Math.random() * 256);
+    let blueRandomColor = Math.floor(Math.random() * 256);
+    changeColor = "rgb(" + redRandomColor + "," + greenRandomColor + "," + blueRandomColor +")";
+  } else {
+    // do nothing...
+  }
+  
+};
+
+
+// create square
+
+function createSquare() {
+  let squareJS = document.createElement("div"); 
+    
+  // mousedown
+    squareJS.addEventListener(changeMouse, () => {
+      
+        squareJS.style.backgroundColor = changeColor;
+      
+      });
+
+    squareJS.className = "squareBox";
+    //squareJS.id = "square";
+    monitor.insertAdjacentElement("beforeend", squareJS);
+    
+ return squareJS;
+};
+
+//create blocks fast
+
+quicklinkBlock1.addEventListener("click", () => {
+  clearFunction();
+  num = 5;
+  createSquareField(5);
+});
+
+quicklinkBlock2.addEventListener("click", () => {
+  clearFunction();
+  num = 10;
+  createSquareField(10);
+});
+
+quicklinkBlock3.addEventListener("click", () => {
+  clearFunction();
+  num = 15;
+  createSquareField(15);
+});
+
+
+
+
+
+/*
+
+//promise example
+
+const getSomething = () => {
+
+  return new Promise((resolve, reject) => {
+    // fetch something
+
+    resolve("just some data");
+    //reject('some error');
   });
 
-  //let children = monitor.square;
+};
 
-  // change color by clicking buttons
-  let changeColor = "black";
+getSomething().then(data => {
+  //console.log(data);
+});
 
-  blueButton.addEventListener("click", () => {
-    changeColor = "blue";
-  });
 
-  blackButton.addEventListener("click", () => {
-    changeColor = "black";
-  });
 
-  greenButton.addEventListener("click", () => {
-    changeColor = "limegreen";
-  });
+*/
 
-  redButton.addEventListener("click", () => {
-    changeColor = "crimson";
-  });
 
-  let rainbow = false;
 
-  rainbowButton.addEventListener("click", () => {
-    if (rainbow == false) {
-      rainbow = true;
-      let redRandomColor = Math.floor(Math.random() * 256);
-      let greenRandomColor = Math.floor(Math.random() * 256);
-      let blueRandomColor = Math.floor(Math.random() * 256);
-      console.log("clicked true");
-      changeColor =
-        "rgb(" +
-        redRandomColor +
-        "," +
-        greenRandomColor +
-        "," +
-        blueRandomColor +
-        ")";
-    } else {
-      rainbow = false;
-      console.log("clicked false");
-      changeColor = "black";
-    }
-  });
+// create screenshot
 
-  // create screenshot
-
-  printButton.addEventListener("click", () => {
-    // screenshot example
+printButton.addEventListener("click", () => {
+  // screenshot example 
     html2canvas(document.body).then((canvas) => {
       let a = document.createElement("a");
       a.download = "screenshot.png";
       a.href = canvas.toDataURL("image/png");
       a.click();
-    });
-  });
+});
+});
 
-  // draw automatically or manually
 
-  let changeMouse = "mouseover";
-
-  // hold button print manual
-  holdButton.addEventListener("click", () => {
-    monitor.innerHTML = "";
-
-    if (changeMouse == "mouseover") {
-      changeMouse = "mousedown";
-      console.log("mousedown");
-    } else {
-      changeMouse = "mouseover";
-      console.log("mouseover");
-    }
-  });
-
-  // create squares
-
-  function createSquares() {
-    let squareJS = document.createElement("div");
-
-    // mousedown
-    squareJS.addEventListener(changeMouse, () => {
-      squareJS.style.backgroundColor = changeColor;
-    });
-
-    squareJS.className = "squareBox";
-    //squareJS.id = "square";
-    monitor.insertAdjacentElement("beforeend", squareJS);
-
-    return squareJS;
-  }
-
-  //create blocks fast
-
-  quicklinkBlock1.addEventListener("click", () => {
-    num = 5;
-    createSquareField();
-  });
-
-  quicklinkBlock2.addEventListener("click", () => {
-    num = 10;
-    createSquareField();
-  });
-
-  quicklinkBlock3.addEventListener("click", () => {
-    num = 15;
-    createSquareField();
-  });
-
-  //promise example
-
-  const getSomething = () => {
-    return new Promise((resolve, reject) => {
-      // fetch something
-
-      resolve("just some data");
-      //reject('some error');
-    });
-  };
-
-  getSomething().then((data) => {
-    console.log(data);
-  });
 };
