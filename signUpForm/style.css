@@ -193,6 +193,7 @@ button:hover{
 }
 .card-heading {
   position: absolute;
+  width: 100%;
   display:flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
