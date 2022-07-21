@@ -47,9 +47,6 @@ window.onload = function () {
     clear();
   });
 
-  //equal
-  //}else if(firstNumber != undefined && secondNumber != undefined ){
-
   function checkFirstNumber() {
     if (firstNumber === "") {
       monitor.innerText = number;
@@ -218,7 +215,7 @@ window.onload = function () {
 
   // mouse click buttons operator minus
 
-  // minus muss auch bei firstNumber funktionieren...!!!
+  // error: minus firstNumber
 
   function minus() {
     if (typeof number === "") {
@@ -349,12 +346,6 @@ window.onload = function () {
     number = number.toString();
   });
 
-  // 0 / x = nicht erlaubt
-
-  // zahl muss mittels click in variable gespeichert werden var 1 und var 2,
-  // operator muss mittels click in variable gespeichert werden op
-  // result muss mittels click in result gespeichert werden
-
   percentButton.addEventListener("click", () => {
     percent();
   });
@@ -365,6 +356,4 @@ window.onload = function () {
     number = number.toString();
     monitor.innerText = number;
   }
-
-  // error NaN fehlt, bei Eingabe ohne number....
 };
