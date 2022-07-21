@@ -47,11 +47,20 @@ window.onload = function () {
     clear();
   });
 
+  function checkNumberLength() {
+    if (number.length > 40) {
+      alert("The number must be less than 40 numbers!");
+      clear();
+    }
+  }
+
   function checkFirstNumber() {
     if (firstNumber === "") {
       monitor.innerText = number;
+      checkNumberLength();
     } else {
       monitor.innerText = firstNumber + operator + number;
+      checkNumberLength();
     }
   }
 
