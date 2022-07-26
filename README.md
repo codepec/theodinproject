@@ -26,7 +26,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
     https://codepec.github.io/theodinproject/adminDashboard/index.html
     |
 8.  Project: Library
-    |
+    https://codepec.github.io/theodinproject/library/index.html
     |
 9.  Project: Tic Tac Toe
     |
