@@ -79,6 +79,64 @@ window.onload = function () {
     allCards.forEach((card) => card.parentNode.removeChild(card));
   }
 
+  let clickedCard = false;
+
+  function createCardMobile() {
+    let monitor = document.querySelector(".monitor"); //monitor
+    clearFunction();
+
+    for (let i = 0; i < myLibrary.length; i++) {
+      let card = document.createElement("div");
+      card.setAttribute("class", "card");
+      card.innerText = myLibrary[i][1] + "\n\n\n\n\n" + myLibrary[i][0];
+
+      card.innerText =
+        myLibrary[i][1] + "\n\n" + " written by " + "\n" + myLibrary[i][0];
+
+      let deleteButton = document.createElement("div");
+      deleteButton.setAttribute("class", "deleteButton");
+      deleteButton.innerText = "delete";
+
+      card.addEventListener("click", () => {
+        if (clickedCard == false) {
+          clickedCard = true;
+          card.style.background = "black";
+          card.style.color = "white";
+          card.innerText =
+            "Number of pages: " +
+            "\n" +
+            myLibrary[i][2] +
+            "\n\n" +
+            " Read status: " +
+            "\n" +
+            myLibrary[i][3] +
+            "\n\n";
+
+          card.appendChild(deleteButton);
+        } else {
+          clickedCard = false;
+          card.style.background = "rgb(145, 172, 190)";
+          card.style.color = "black";
+          card.innerText =
+            myLibrary[i][1] + "\n\n" + " written by " + "\n" + myLibrary[i][0];
+        }
+      });
+
+      // remove cards from the Library
+
+      deleteButton.addEventListener("click", () => {
+        // remove in HTML
+        card.parentNode.removeChild(card);
+
+        // remove from array
+        let deletedBook = myLibrary.splice(i, 1);
+        checkMobile(); //createCard();
+      });
+
+      monitor.appendChild(card);
+    }
+  }
+
   function createCard() {
     let monitor = document.querySelector(".monitor"); //monitor
     clearFunction();
@@ -118,7 +176,7 @@ window.onload = function () {
 
         // remove from array
         let deletedBook = myLibrary.splice(i, 1);
-        createCard();
+        checkMobile(); //createCard();
       });
 
       card.addEventListener("mouseleave", () => {
@@ -128,8 +186,6 @@ window.onload = function () {
       monitor.appendChild(card);
     }
   }
-
-  createCard();
 
   // library array, constructor, etc
 
@@ -154,11 +210,25 @@ window.onload = function () {
       const propertyValues = Object.values(book);
 
       myLibrary.push(propertyValues);
-      createCard();
+      checkMobile(); //createCard();
     }
   }
 
   addButton.addEventListener("click", () => {
     addBookToLibrary();
   });
+
+  function checkMobile() {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      createCardMobile();
+    } else {
+      createCard();
+    }
+  }
+
+  checkMobile();
 };

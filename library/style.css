@@ -127,6 +127,20 @@ h1 {
   cursor:pointer;
 }
 
+.card:active {
+  
+  display: block;
+  background-color: black;
+  color:white;
+  /*box-shadow: inset 0px 0px 50px #868686;*/
+  border-radius: 15px;
+  padding:30px;
+  border: 1px solid black;
+  margin: 5px;
+  box-shadow: 0px 0px 0px 0px black;
+  cursor:pointer;
+}
+
 
 .inputBox{
 
@@ -163,3 +177,4 @@ h1 {
   box-shadow: 1px 1px 0px 0px black;
   
 }
+
