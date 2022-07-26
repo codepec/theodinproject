@@ -3,18 +3,28 @@
 window.onload = function () {
   // DOM to HTML
 
-  let card1 = document.getElementById("card1");
-  let showWindow = document.getElementById("showWindow"); // |||
-  let hiddenWindow = document.getElementById("hiddenWindow"); // X
+  let showWindow = document.getElementById("showWindow");
+  let hiddenWindow = document.getElementById("hiddenWindow");
   let window = document.getElementById("window");
   let card = document.getElementById("card");
+  //let deleteButton = document.getElementById("deleteButton");
 
-  // my library
+  // my library array
 
   let myLibrary = [
-    ["J. R. R. Tolkien", "The hobbit", 305, false],
-    ["J. K. Rowling", "Harry Potter and the Philosopher's Stone", 223, false],
-    ["J. K. Rowling", "Harry Potter and the Chamber of Secrets", 251, true],
+    ["J. R. R. Tolkien", "The hobbit", 305, "already read"],
+    [
+      "J. K. Rowling",
+      "Harry Potter and the Philosopher's Stone",
+      223,
+      "not read yet",
+    ],
+    [
+      "J. K. Rowling",
+      "Harry Potter and the Chamber of Secrets",
+      251,
+      "not read yet",
+    ],
   ];
 
   // navbar + add new books container
@@ -47,8 +57,22 @@ window.onload = function () {
   let newTitle = document.getElementById("newTitle");
   let newAuthor = document.getElementById("newAuthor");
   let newPages = document.getElementById("newPages");
-  let newReadStatus = document.getElementById("newReadStatus");
+  let checkboxStatus = document.getElementById("checkboxStatus");
   let addButton = document.getElementById("addButton");
+
+  function checkCheckboxStatus() {
+    if (checkboxStatus.checked == true) {
+      newReadStatus = "already read";
+    } else {
+      newReadStatus = "not read yet";
+    }
+  }
+
+  checkCheckboxStatus();
+
+  checkboxStatus.addEventListener("change", () => {
+    checkCheckboxStatus();
+  });
 
   function clearFunction() {
     let allCards = document.querySelectorAll(".card");
@@ -68,48 +92,44 @@ window.onload = function () {
       card.innerText =
         myLibrary[i][1] + "\n\n" + " written by " + "\n" + myLibrary[i][0];
 
-      card.addEventListener("mouseover", () => {
+      let deleteButton = document.createElement("div");
+      deleteButton.setAttribute("class", "deleteButton");
+      deleteButton.innerText = "delete";
+
+      card.addEventListener("mouseenter", () => {
         card.innerText =
           "Number of pages: " +
           "\n" +
           myLibrary[i][2] +
           "\n\n" +
-          " Already read: " +
+          " Read status: " +
           "\n" +
           myLibrary[i][3] +
-          "\n\n" +
-          "delete book";
+          "\n\n";
+
+        card.appendChild(deleteButton);
       });
 
-      card.addEventListener("mouseout", () => {
+      // remove cards from the Library
+
+      deleteButton.addEventListener("click", () => {
+        // remove in HTML
+        card.parentNode.removeChild(card);
+
+        // remove from array
+        let deletedBook = myLibrary.splice(i, 1);
+        createCard();
+      });
+
+      card.addEventListener("mouseleave", () => {
         card.innerText =
           myLibrary[i][1] + "\n\n" + " written by " + "\n" + myLibrary[i][0];
       });
-
       monitor.appendChild(card);
     }
   }
 
   createCard();
-
-  function newBookInput() {
-    if (newTitle.value == "" || newAuthor.value == "") {
-      alert("Please insert new book information");
-    } else {
-      myLibrary.push([newTitle.value, newAuthor.value, newPages.value]);
-
-      createCard();
-    }
-  }
-
-  function deleteFunction() {
-    let deleteButton = document.createElement("button");
-    card.append(deleteButton);
-  }
-
-  addButton.addEventListener("click", () => {
-    newBookInput();
-  });
 
   // library array, constructor, etc
 
@@ -120,24 +140,25 @@ window.onload = function () {
     this.readStatus = readStatus;
   }
 
-  function addBookToLibrary() {}
+  function addBookToLibrary() {
+    if (newTitle.value == "" || newAuthor.value == "") {
+      alert("Please insert new book information");
+    } else {
+      let book = new Book(
+        newAuthor.value,
+        newTitle.value,
+        newPages.value,
+        newReadStatus
+      );
 
-  /*
+      const propertyValues = Object.values(book);
 
-let cardX = document.getElementById("cardx");
+      myLibrary.push(propertyValues);
+      createCard();
+    }
+  }
 
-const books = ["book1", "book2", "book3"];
-
-let text = "<ul>";
-books.forEach(myFunction);
-text += "</ul>";
-
-function myFunction(value){
-  text += "<li>" + value + "</li>";
-}
-
-cardX.innerHTML = text;
-
-
-*/
+  addButton.addEventListener("click", () => {
+    addBookToLibrary();
+  });
 };
