@@ -29,7 +29,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
     https://codepec.github.io/theodinproject/library/index.html
     |
 9.  Project: Tic Tac Toe
-    |
+    https://codepec.github.io/theodinproject/tictactoe/index.html
     |
 10. Project: Restaurant Page
     |
