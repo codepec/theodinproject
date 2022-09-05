@@ -39,7 +39,7 @@ class App extends Component {
     const { task, tasks } = this.state;
 
     return (
-      <div>
+      <div className="create">
         <form onSubmit={this.onSubmitTask}>
           <label htmlFor="taskInput">Enter task</label>
           <input
@@ -48,6 +48,7 @@ class App extends Component {
             type="text"
             id="taskInput"
           />
+
           <button type="submit">Add Task</button>
         </form>
         <Overview tasks={tasks} />

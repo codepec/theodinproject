@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+:root{
+  --primary: #3551f1;
+  --secondary: #65b694;
+  --background: #3a3c40;
+
+}
+
 /* base styles */
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
+  color: var(--background);
 }
 .navbar {
   padding: 20px;
@@ -15,7 +22,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: var(--primary);
 }
 .navbar .links {
   margin-left: auto;
@@ -26,7 +33,7 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: var(--primary);
 }
 .content {
   max-width: 600px;
@@ -45,7 +52,7 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: var(--primary);
   margin-bottom: 8px;
 }
 .blog-preview a{
@@ -55,14 +62,14 @@
 /* blog details page */
 .blog-details h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: var(--primary);
   margin-bottom: 10px;
 }
 .blog-details div {
   margin: 20px 0;
 }
 .blog-details button {
-  background: #f1356d;
+  background: var(--primary);
   color: #fff;
   border: 0;
   padding: 8px;
@@ -82,7 +89,7 @@
 }
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: var(--primary);
   margin-bottom: 30px;
 }
 .create input, .create textarea, .create select {
@@ -94,7 +101,7 @@
   display: block;
 }
 .create button {
-  background: #f1356d;
+  background: var(--primary);
   color: #fff;
   border: 0;
   padding: 8px;
