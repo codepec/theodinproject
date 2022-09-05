@@ -46,7 +46,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
 14. Project: Battleship
     |
     |
-15. Project: CV Application
+15. Project: CV Project
     |
     |
 16. Project: Memory Card
