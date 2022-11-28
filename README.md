@@ -32,7 +32,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
     https://codepec.github.io/theodinproject/tictactoe/index.html
     |
 10. Project: Restaurant Page
-    |
+    https://codepec.github.io/theodinproject/restaurantPage/dist/index.html
     |
 11. Project: Todo List
     |
