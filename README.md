@@ -35,7 +35,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
     https://codepec.github.io/theodinproject/restaurantPage/dist/index.html
     |
 11. Project: Todo List
-    |
+    https://codepec.github.io/theodinproject/todolist/index.html
     |
 12. Project: Weather App
     |
