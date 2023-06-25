@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Weather App</h1>
+
+  <form id="weatherForm" onsubmit="return false;">
+    <label for="locationInput">Location:</label>
+    <input type="text" id="locationInput" placeholder="Enter location">
+    <button onclick="showWeather()">Get Weather</button>
+  </form>
+
+  <div id="weatherContainer"></div>
+
+
+</body>
+</html>

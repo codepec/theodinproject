@@ -38,7 +38,7 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
     https://codepec.github.io/theodinproject/todolist/index.html
     |
 12. Project: Weather App
-    |
+    https://codepec.github.io/theodinproject/weatherApp/index.html
     |
 13. Project: Testing Practice
     |
