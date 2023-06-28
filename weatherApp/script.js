@@ -1,86 +1,72 @@
-function getWeatherData(location) {
-  // Replace 'YOUR_API_KEY' with your actual API key
-  const apiKey = "YOUR_API_KEY";
-  const apiUrl = `https://api.example.com/weather?location=${location}&apiKey=${apiKey}`;
-
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      // Process and log the weather data
-      console.log("Weather Data:", data);
-    })
-    .catch((error) => {
-      console.log("An error occurred while fetching weather data:", error);
-    });
-}
-
-getWeatherData("New York");
-
-function processWeatherData(data) {
-  // Extract the necessary data from the JSON response
-  const location = data.location.name;
-  const temperature = data.current.temperature;
-  const description = data.current.weather_descriptions[0];
-  const humidity = data.current.humidity;
-  const windSpeed = data.current.wind_speed;
-
-  // Create an object with the extracted data
-  const weatherObject = {
-    location: location,
-    temperature: temperature,
-    description: description,
-    humidity: humidity,
-    windSpeed: windSpeed,
-  };
-
-  return weatherObject;
-}
-
-fetch(apiUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    const processedData = processWeatherData(data);
-    console.log("Processed Weather Data:", processedData);
-  })
-  .catch((error) => {
-    console.log("An error occurred while fetching weather data:", error);
-  });
+const weatherData = {
+  "New York": {
+    condition: "Cloudy",
+    tempDay: 20,
+    tempNight: 11
+  },
+  "Malibu": {
+    condition: "Sunny",
+    tempDay: 26,
+    tempNight: 18
+  },
+  "Pakistan": {
+    condition: "Partly Cloudy",
+    tempDay: 32,
+    tempNight: 24
+  },
+  "Cape Town": {
+    condition: "Rainy",
+    tempDay: 15,
+    tempNight: 8
+  },
+  "Hamburg": {
+    condition: "Windy",
+    tempDay: 18,
+    tempNight: 12
+  }
+};
 
 function showWeather() {
   const location = document.getElementById("locationInput").value;
   const weatherContainer = document.getElementById("weatherContainer");
 
-  let condition, tempDay, tempNight;
+  console.log("Selected location:", location);
 
-  if (location === "New York") {
-    condition = "Cloudy";
-    tempDay = 20;
-    tempNight = 11;
-  } else if (location === "Munich") {
-    condition = "Sunny";
-    tempDay = 37;
-    tempNight = 23;
-  } else {
-    weatherContainer.textContent =
-      "Weather information not available for this location.";
+  if (!location || !weatherData[location]) {
+    console.log("Weather information not available for this location.");
+    weatherContainer.textContent = "Weather information not available for this location.";
     return;
   }
 
-  weatherContainer.textContent = "";
+  console.log("Weather data for", location, ":", weatherData[location]);
+
+  weatherContainer.innerHTML = "";
+
+  const weatherTile = document.createElement("div");
+  weatherTile.className = "weatherTile";
 
   const h2 = document.createElement("h2");
   h2.textContent = `Weather in ${location}`;
-  weatherContainer.appendChild(h2);
+  weatherTile.appendChild(h2);
 
-  const p1 = document.createElement("p");
-  p1.textContent = `Condition: ${condition}`;
-  weatherContainer.appendChild(p1);
+  const conditionElement = document.createElement("p");
+  conditionElement.textContent = `Condition: ${weatherData[location].condition}`;
+  weatherTile.appendChild(conditionElement);
 
-  const p2 = document.createElement("p");
-  p2.textContent = `Temperature (Day): ${tempDay} °C`;
-  weatherContainer.appendChild(p2);
+  const tempDayElement = document.createElement("p");
+  tempDayElement.textContent = `Temperature (Day): ${weatherData[location].tempDay} °C`;
+  weatherTile.appendChild(tempDayElement);
 
-  const p3 = document.createElement("p");
-  p3.textContent = `Temperature (Night): ${tempNight} °C`;
-  weatherContainer.appendChild(p3);
+  const tempNightElement = document.createElement("p");
+  tempNightElement.textContent = `Temperature (Night): ${weatherData[location].tempNight} °C`;
+  weatherTile.appendChild(tempNightElement);
+
+  weatherContainer.appendChild(weatherTile);
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const locations = Object.keys(weatherData);
+  locations.forEach((location) => {
+    showWeather(location);
+  });
+});
