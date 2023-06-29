@@ -1,105 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>To Do List</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="project-list">
+    <h2>Projects</h2>
+    <div id="projects"></div>
+    <form id="new-project-form">
+      <input type="text" id="project-name" placeholder="Enter project name">
+      <button type="submit">Create Project</button>
+    </form>
+  </div>
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+  <div id="todo-list">
+    <h2>Todos</h2>
+    <div id="todos"></div>
+    <form id="new-todo-form">
+      <input type="text" id="todo-title" placeholder="Enter todo title">
+      <input type="text" id="todo-description" placeholder="Enter todo description">
+      <input type="date" id="todo-due-date">
+      <select id="todo-priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button type="submit">Create Todo</button>
+    </form>
+  </div>
 
-    <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
+  <div id="todo-details" class="hide">
+    <h2>Todo Details</h2>
+    <h3 id="todo-details-title"></h3>
+    <p id="todo-details-description"></p>
+    <p class="card-details">Due Date: <span id="todo-details-due-date" class="due-date"></span></p>
+    <p class="card-details">Priority: <span id="todo-details-priority" class="priority"></span></p>
+    <p id="todo-details-notes"></p>
+    <ul id="todo-details-checklist"></ul>
+    <button id="delete-todo">Delete Todo</button>
+  </div>
 
-  <body>
-
-
-  
-
-
-
-
-        <!--
-
-          projects in sidebar
-          
-            folder tree with projects
-
-                          todos per project
-
-          title
-          description
-          dueDate
-          priority
-          notes
-          checklist
-
-
-          default projects
-
-
-          https://www.theodinproject.com/lessons/node-path-javascript-todo-list
-        -->
-
-        <div class="logo">
-          <h1>to do list</h1>
-        </div>
-
-        <div class="mainContent">
-
-        <div class="sidebar">
-          <h2>projects:</h2>
-
-          <!--<div>+ add project</div>-->
-        </div>
-
-        <div class="content">
-        
-   
-
-            <div class="projectContent">
-             <!-- <h1>projects</h1>
-              <p>project 1</p>
-              <button>edit</button>
-              <button>delete</button>
-              <p>project 2</p>
-              <button>edit</button>
-              <button>delete</button>
-              <p>project 3</p>
-              <button>edit</button>
-              <button>delete</button>
-
-              -->
-            </div>
-
-            <div class="taskContent">
-       
-         
-            </div>
-
-           
-      
-          </div>
-        </div>
-      
-      <div class="footer">
-        <footer>
-          created with <i class="fa fa-heart" aria-hidden="true"></i> by CodePec
-        </footer>
-      </div>
-
-   
-
-    <script src="script.js"></script>
-
-
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
