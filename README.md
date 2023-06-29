@@ -40,56 +40,69 @@ https://www.theodinproject.com/paths/foundations/courses/foundations
 12. Project: Weather App
     https://codepec.github.io/theodinproject/weatherApp/index.html
     |
-13. Project: Testing Practice
+13. A Bit of Computer Science
+    13.1. Project: Recursion
     |
     |
-14. Project: Battleship
+    13.2. Project: Linked Lists
     |
     |
-15. Project: CV Project
+    13.3. Project: Binary Search Trees
     |
     |
-16. Project: Memory Card
+    13.4. Project: Knights Travails
     |
     |
-17. Project: Shopping Cart
+14. Project: Testing Practice
     |
     |
-18. Project: Where's Waldo (A Photo Tagging App)
+15. Project: Battleship
     |
     |
-19. Project: JavaScript Final Project
+16. Project: CV Project
     |
     |
-20. Project: Personal Portfolio
+17. Project: Memory Card
     |
     |
-21. Project: Basic Informational Site
+18. Project: Shopping Cart
     |
     |
-22. Project: Mini Message Board
+19. Project: Where's Waldo (A Photo Tagging App)
     |
     |
-23. Project: Express 105: Forms and Deployment
+20. Project: JavaScript Final Project
     |
     |
-24. Project: Inventory Application
+21. Project: Personal Portfolio
     |
     |
-25. Project: Members Only
+22. Project: Basic Informational Site
     |
     |
-26. Project: Blog API
+23. Project: Mini Message Board
     |
     |
-27. Project: Odin-Book
+24. Project: Express 105: Forms and Deployment
     |
     |
-28. Project: Building Your Personal Website
+25. Project: Inventory Application
     |
     |
-29. Project: Building Your Resume
+26. Project: Members Only
     |
     |
-30. myOwnProject: CardGame
+27. Project: Blog API
+    |
+    |
+28. Project: Odin-Book
+    |
+    |
+29. Project: Building Your Personal Website
+    |
+    |
+30. Project: Building Your Resume
+    |
+    |
+31. myOwnProject: CardGame
     https://codepec.github.io/theodinproject/cardgame/index.html
