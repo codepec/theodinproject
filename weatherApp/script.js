@@ -1,72 +1,67 @@
 const weatherData = {
-  "New York": {
-    condition: "Cloudy",
-    tempDay: 20,
-    tempNight: 11
-  },
-  "Malibu": {
-    condition: "Sunny",
-    tempDay: 26,
-    tempNight: 18
-  },
-  "Pakistan": {
-    condition: "Partly Cloudy",
-    tempDay: 32,
-    tempNight: 24
-  },
-  "Cape Town": {
-    condition: "Rainy",
-    tempDay: 15,
-    tempNight: 8
-  },
-  "Hamburg": {
-    condition: "Windy",
-    tempDay: 18,
-    tempNight: 12
-  }
+  "New York": { condition: "Cloudy", tempDay: 20, tempNight: 11 },
+  "Malibu": { condition: "Sunny", tempDay: 26, tempNight: 18 },
+  "Pakistan": { condition: "Partly Cloudy", tempDay: 32, tempNight: 24 },
+  "Cape Town": { condition: "Rainy", tempDay: 15, tempNight: 8 },
+  "Hamburg": { condition: "Windy", tempDay: 18, tempNight: 12 }
 };
 
+document.getElementById("weatherForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  showWeather();
+});
+
 function showWeather() {
-  const location = document.getElementById("locationInput").value;
+  const city = document.getElementById("citySelect").value;
   const weatherContainer = document.getElementById("weatherContainer");
 
-  console.log("Selected location:", location);
-
-  if (!location || !weatherData[location]) {
-    console.log("Weather information not available for this location.");
-    weatherContainer.textContent = "Weather information not available for this location.";
-    return;
-  }
-
-  console.log("Weather data for", location, ":", weatherData[location]);
-
+  // Clear previous content safely
   weatherContainer.innerHTML = "";
 
+  if (!city) {
+      const message = document.createElement("p");
+      message.textContent = "Please select a city.";
+      weatherContainer.appendChild(message);
+      return;
+  }
+
+  const weather = weatherData[city];
+
+  // Create a weather tile securely
   const weatherTile = document.createElement("div");
   weatherTile.className = "weatherTile";
 
-  const h2 = document.createElement("h2");
-  h2.textContent = `Weather in ${location}`;
-  weatherTile.appendChild(h2);
+  const title = document.createElement("h2");
+  title.textContent = `Weather in ${city}`;
 
-  const conditionElement = document.createElement("p");
-  conditionElement.textContent = `Condition: ${weatherData[location].condition}`;
-  weatherTile.appendChild(conditionElement);
+  const conditionText = document.createElement("p");
+  conditionText.textContent = `Condition: ${weather.condition}`;
 
-  const tempDayElement = document.createElement("p");
-  tempDayElement.textContent = `Temperature (Day): ${weatherData[location].tempDay} °C`;
-  weatherTile.appendChild(tempDayElement);
+  const tempDayText = document.createElement("p");
+  tempDayText.textContent = `Temperature (Day): ${weather.tempDay}°C`;
 
-  const tempNightElement = document.createElement("p");
-  tempNightElement.textContent = `Temperature (Night): ${weatherData[location].tempNight} °C`;
-  weatherTile.appendChild(tempNightElement);
+  const tempNightText = document.createElement("p");
+  tempNightText.textContent = `Temperature (Night): ${weather.tempNight}°C`;
 
+  // Append elements safely
+  weatherTile.appendChild(title);
+  weatherTile.appendChild(conditionText);
+  weatherTile.appendChild(tempDayText);
+  weatherTile.appendChild(tempNightText);
   weatherContainer.appendChild(weatherTile);
+
+  updateBackground(weather.condition);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const locations = Object.keys(weatherData);
-  locations.forEach((location) => {
-    showWeather(location);
-  });
-});
+function updateBackground(condition) {
+  const body = document.body;
+  if (condition.includes("Rain")) {
+      body.style.backgroundColor = "#4a90e2";
+  } else if (condition.includes("Sunny")) {
+      body.style.backgroundColor = "#f7d154";
+  } else if (condition.includes("Cloudy")) {
+      body.style.backgroundColor = "#95a5a6";
+  } else {
+      body.style.backgroundColor = "#83a8c2";
+  }
+}

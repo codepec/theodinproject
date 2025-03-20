@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Weather App</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>Weather App</h1>
+    <h1>Weather App</h1>
 
-  <form id="weatherForm" onsubmit="return false;">
-    <label for="locationInput">Location:</label>
-    <input type="text" id="locationInput" placeholder="Enter location">
-    <button onclick="showWeather()">Get Weather</button>
-  </form>
+    <form id="weatherForm">
+        <label for="citySelect">Select a city:</label>
+        <select id="citySelect">
+            <option value="">-- Choose a city --</option>
+            <option value="New York">New York</option>
+            <option value="Malibu">Malibu</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Cape Town">Cape Town</option>
+            <option value="Hamburg">Hamburg</option>
+        </select>
+        <button type="submit">Get Weather</button>
+    </form>
 
-  <div class="weatherContainerClass" id="weatherContainer"></div>
-
-  
-
-
+    <div id="weatherContainer"></div>
 </body>
 </html>

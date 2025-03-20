@@ -1,107 +1,36 @@
-/* Allgemeine Stile */
-
 body {
-    background-color: rgb(83, 168, 194);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 5px 5px 10px 10px black;
-  }
-  
-  /* Formularstil */
-  
-  #weatherForm {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    color: white;
-    font-weight: bold;
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    width: 200px;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: white;
-    color: rgb(83, 168, 194);
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Wetterkachelstil */
-  
-  .weatherContainerClass {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .weatherTile {
-    background-color: black;
-    border: 1px solid white;
-    box-shadow: 0 0 15px white;
-    color: white;
-    padding: 20px;
-    margin: 5px;
-    text-align: center;
-    border-radius: 15px;
-  }
-  
-  .weatherTile h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .weatherTile p {
-    margin-bottom: 5px;
-  }
-  
-  /* Medienabfragen für die Responsive-Ansicht */
-  
-  @media screen and (max-width: 768px) {
-    .weatherTile {
-      flex: 0 0 calc(50% - 40px); /* Breite auf 50% setzen, Abstand von 20px berücksichtigen */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .weatherTile {
-      flex: 0 0 calc(100% - 10px); /* Breite auf 100% setzen, Abstand von 5px berücksichtigen */
-    }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(83, 168, 194);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-    .weatherContainerClass {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-      
-    .weatherTile {
-        background-color: black;
-        border: 1px solid white;
-        box-shadow: 0 0 5px white;
-        color: white;
-        padding: 20px;
-        margin: 5px;
-        text-align: center;
-        flex: 0 0 calc(50% - 10px); /* Breite auf 50% setzen, Abstand von 5px berücksichtigen */
-    }
-    input[type="text"] {
-        padding: 5px;
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      
-  }
-  
+h1 {
+  padding: 20px;
+  box-shadow: 5px 5px 10px black;
+}
+
+form {
+  margin: 20px;
+}
+
+select, button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+#weatherContainer {
+  margin-top: 20px;
+}
+
+.weatherTile {
+  display: inline-block;
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px white;
+  margin-top: 20px;
+}
